@@ -1,0 +1,3 @@
+sitemap: https://bryanrieger.com/sitemap.txt
+User-agent: *
+Disallow: 

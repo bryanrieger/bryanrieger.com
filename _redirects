@@ -1,0 +1,6 @@
+---
+layout: false
+permalink: _redirects
+eleventyExcludeFromCollections: true
+---
+/source /destination 302

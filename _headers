@@ -1,0 +1,8 @@
+---
+layout: false
+permalink: _headers
+eleventyExcludeFromCollections: true
+---
+Access-Control-Allow-Origin: https://{{ site.url }}, https://www.{{ site.url }}
+Content-Security-Policy: default-src 'self';
+Vary: Origin

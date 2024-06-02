@@ -1,0 +1,12 @@
+@charset "UTF-8";
+@font-face { font-family: 'OhnoSoftie'; src: url('/assets/fonts/ohno-softie/light.woff2') format('woff2'); font-weight: 300; font-style: normal; font-display: swap; size-adjust: 110%;}
+@font-face { font-family: 'OhnoSoftie'; src: url('/assets/fonts/ohno-softie/regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; size-adjust: 110%; } 
+@font-face { font-family: 'OhnoSoftie'; src: url('/assets/fonts/ohno-softie/medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; size-adjust: 110%; }
+@font-face { font-family: 'OhnoSoftie'; src: url('/assets/fonts/ohno-softie/bold.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; size-adjust: 110%; }
+@font-face { font-family: 'OhnoSoftie'; src: url('/assets/fonts/ohno-softie/black.woff2') format('woff2'); font-weight: 900; font-style: normal; font-display: swap; size-adjust: 110%; }
+
+:root {  
+  --font-header-sans: "OhnoSoftie", "_OhnoSoftie", "Arial", sans-serif;
+}
+
+[class*="sans"] h1, [class*="sans"] h2, [class*="sans"] h3, [class*="sans"] h4 { font-family: var(--font-header-sans); }
