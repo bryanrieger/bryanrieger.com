@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0",  
+  "name": "bryanrieger.com",
+  "description": "Personal website - http://bryanrieger.com",
+  "author": "Bryan Rieger <bryan@yiibu.com>",
+  "keywords": [
+    "artist",
+    "designer",
+    "writer"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bryanrieger/bryanrieger.com"
+  },
+  "type": "module",
+  "dependencies": {
+    "html-minifier-terser": "^7.2.0",
+    "clean-css": "^5.3.3",
+    "uglify-js": "^3.19.3"
+  },
+  "scripts": {
+    "dev": "npm run clean && sleep 1.0 && open 'http://localhost:8080' & eleventy --serve",
+    "test": "npm run build && sleep 1.0 && open -n -a 'Google Chrome' --args --profile-directory='Profile 2' 'http://localhost' & caddy file-server -r ./build",
+    "build": "npm run clean && eleventy && npm run minify",
+    "minify": "node .assets/scripts/utilities/eleventy.minify.cjs ./build",
+    "clean": "rm -rfv build"
+  }
+}
+  

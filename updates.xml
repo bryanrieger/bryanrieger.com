@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <!-- channel -->
+  <language>en-CA</language>
+  <id>https://bryanrieger.com</id>
+  <icon>https://bryanrieger/assets/icons/icon.png</icon>
+  <link rel="alternate" href="https://bryanrieger.com"/>
+  <link rel="self" href="https://bryanrieger.com/updates.xml" type="application/rss+xml"/>
+  <title>Title</title>
+  <subtitle>Description</subtitle>
+  <author>
+    <name>Bryan Rieger</name>
+    <uri>https://bryanrieger.com</uri>
+  </author>
+  <rights>Copyright (c) 2025, Bryan Rieger</rights>
+  <generator>Handmade with ❤️ in Montréal, Canada.</generator>
+  <updated>2025-03-18T18:40:52-05:00</updated>
+  <!-- entries -->
+  <entry>
+    <id>https://bryanrieger.com/item</id>
+    <link href="https://bryanrieger.com/item" rel="alternate" type="text/html" /> 
+    <title>Title</title>
+    <summary>Summary</summary>
+    <content type="html">Description</content>
+    <updated>2025-03-18T18:40:52-05:00</updated>
+    <published>2025-03-18T18:40:52-05:00</published>
+  </entry>
+</feed>

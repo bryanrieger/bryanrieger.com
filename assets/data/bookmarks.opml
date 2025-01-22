@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+	<meta charset="utf-8"/>
+	<title>Sample OPML file for RSSReader</title>
+	<<dateCreated>2025-01-04 10:30:01 -0500</dateCreated>
+  </head>
+  <body>
+  <outline title="Sometimes" text="Sometimes you just nees" type="link" url="http://baldmove.com/category/the-leftovers/"/>
+  <outline title="Whatever" text="This is an image of whatever.">
+  	<outline title="Another" text="Huh?"/>
+  </outline>
+	<outline title="Sometimes" text="Sometimes you just nees"/>
+	<outline text="Guillaume Perreault">
+	  <outline text="asdf"/>
+	  <outline text="asdf"/>
+	</outline>
+  </body>
+</opml>

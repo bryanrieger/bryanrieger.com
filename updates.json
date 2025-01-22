@@ -1,0 +1,28 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "home_page_url": "https://bryanrieger.com",
+    "feed_url": "https://bryanrieger.com/updates.json",
+    "icon": "https://bryanrieger.com/assets/icons/icon.png",
+    "favicon": "https://bryanrieger.com/assets/icons/favicon.png",
+    "language": "en-CA",
+    "title": "Title",
+    "description": "Description",
+    "authors": [
+        {
+          "name": "Bryan Rieger",
+          "url": "https://bryanrieger.com",
+          "avatar": "https://bryanrieger.com/assets/images/avatar-512x512.png"
+        }
+    ],
+    "items": [
+        {
+            "id": "https://bryanrieger.com/item",
+            "url": "https://bryanrieger.com/item",
+            "title": "{{title}}",
+            "summary": "Hello, world!",
+            "content_html": "This is a second item.",
+            "date_modified": "2025-03-18T18:40:52-05:00",
+            "date_published": "2025-03-18T18:40:52-05:00"
+        }
+    ]
+}
