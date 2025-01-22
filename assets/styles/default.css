@@ -55,15 +55,18 @@ a:visited {
   color: var(--color-visited);
   fill: var(--color-visited);
 }
-a:hover,
-a:focus  {
-  color: var(--color-hover);
-  fill: var(--color-hover);
+@media (hover: hover) {
+  a:hover,
+  a:focus  {
+    color: var(--color-hover);
+    fill: var(--color-hover);
+  }
+  a:active {
+    color: var(--color-active);
+    fill: var(--color-active);
+  }
 }
-a:active {
-  color: var(--color-active);
-  fill: var(--color-active);
-}
+
 form {
   font-family: var(--font-sans);
 }
@@ -136,18 +139,22 @@ strong { font-weight: 700; }
   cursor: pointer;
   margin-right: -0.625rem;
 }
-.banner a:hover,
-.banner a:focus,
-.banner label:hover,
-.banner label:focus  {
-  color: var(--color-hover);
-  fill: var(--color-hover);
+
+@media (hover: hover) {
+  .banner a:hover,
+  .banner a:focus,
+  .banner label:hover,
+  .banner label:focus  {
+    color: var(--color-hover);
+    fill: var(--color-hover);
+  }
+  .banner a:active,
+  .banner label:active {
+    color: var(--color-active);
+    fill: var(--color-active);
+  }
 }
-.banner a:active,
-.banner label:active {
-  color: var(--color-active);
-  fill: var(--color-active);
-}
+
 .banner span { display: none; }
 
 .banner:has(input:checked) ~ main,
@@ -242,14 +249,16 @@ strong { font-weight: 700; }
   color: var(--color-foreground);
   fill: var(--color-foreground);
 }
-.imprint a:hover,
-.imprint a:focus {
-  color: var(--color-hover);
-  fill: var(--color-hover);
-}
-.imprint a:active {
-  color: var(--color-active);
-  fill: var(--color-active);
+@media (hover: hover) {
+  .imprint a:hover,
+  .imprint a:focus {
+    color: var(--color-hover);
+    fill: var(--color-hover);
+  }
+  .imprint a:active {
+    color: var(--color-active);
+    fill: var(--color-active);
+  }
 }
 .imprint p {
   flex: 1;
