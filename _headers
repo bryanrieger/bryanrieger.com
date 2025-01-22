@@ -1,6 +1,6 @@
 /*
   Access-Control-Allow-Origin: https://bryanrieger.com, https://www.bryanrieger.com
-  Content-Security-Policy: default-src 'self';  script-src 'self'; frame-src 'self';
+  Content-Security-Policy: default-src 'self' wasm-unsafe-eval;  script-src 'self' wasm-unsafe-eval; frame-src 'self';
   Cross-Origin-Embedder-Policy: require-corp
   Cross-Origin-Opener-Policy: same-origin
   Referrer-Policy: strict-origin
