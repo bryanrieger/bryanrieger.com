@@ -336,7 +336,7 @@ strong { font-weight: 700; }
   }
   .banner:has(input:checked) ~ .assets {
     margin-left: -50vw; margin-right: -50vw;
-    left: 50%; right: 50%; width: 100vw;
+    left: 50%; right: 50%; width: 100vw; height: 100vh;
   }
 }
 @media (min-width: 120rem) {
