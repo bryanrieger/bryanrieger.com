@@ -10,34 +10,34 @@
   "description": "An artist, designer, and writer in Montréal, Canada.",
   "icons": [
     {
-      "src": "/assets/images/icons/app/icon.svg",
+      "src": "/assets/manifest/icons/icon.svg",
       "type": "image/svg+xml",
       "sizes": "150x150"
     }, 
     {
-      "src": "/assets/images/icons/app/icon.svg",
+      "src": "/assets/manifest/icons/icon+mask.svg",
       "type": "image/svg+xml",
       "sizes": "150x150",
       "purpose": "maskable"
     }, 
     {
-      "src": "/assets/images/icons/app/icon@256px.png",
+      "src": "/assets/manifest/icons/icon@256px.png",
       "type": "image/png",
       "sizes": "256x256"
     }, 
     {
-      "src": "/assets/images/icons/app/icon@256px.png",
+      "src": "/assets/manifest/icons/icon@256px+mask.png",
       "type": "image/png",
       "sizes": "256x256",
       "purpose": "maskable"
     }, 
     {
-      "src": "/assets/images/icons/app/icon@512px.png",
+      "src": "/assets/manifest/icons/icon@512px.png",
       "type": "image/png",
       "sizes": "512x512"
     }, 
     {
-      "src": "/assets/images/icons/app/icon@512px.png",
+      "src": "/assets/manifest/icons/icon@512px+mask.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "maskable"
@@ -45,14 +45,14 @@
   ],
   "screenshots" : [
     {
-      "src": "/assets/images/previews/app/portrait.png",
+      "src": "/assets/manifest/screenshots/portrait.png",
       "label": "Bryan Rieger",
       "type": "image/png",
       "sizes": "540x720",
       "form_factor": "narrow"
     }, 
     {
-      "src": "/assets/images/previews/app/landscape.png",
+      "src": "/assets/manifest/screenshots/landscape.png",
       "label": "Bryan Rieger", 
       "type": "image/jpg",
       "sizes": "720x540",
