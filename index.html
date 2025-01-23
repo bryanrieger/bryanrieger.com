@@ -2,7 +2,6 @@
 <html lang="en-ca" prefix="og: http://ogp.me/ns#">
 <head>
 	<title>Bryan Rieger</title>
-	<!-- meta -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,viewport-fit=cover">
 	<meta name="generator" content="Handmade with ❤️ in Montréal, Canada.">
@@ -14,7 +13,6 @@
 	<meta name="description" content="{{ description }}">
 	<meta name="keywords" content="{{ keywords }}, {{ keywords }}">
 	<meta name="theme-color" content="#fffdf8">
-	<!-- social -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@bryanrieger">
 	<meta property="og:type" content="website">
@@ -27,13 +25,11 @@
 	<meta property="og:image:type" content="image/png">
 	<meta property="og:description" content="{{ description }}">
 	<meta property="og:url" content="https://bryanrieger.com/{{ url }}">
-	<!-- icons -->
 	<link rel="icon" href="/assets/icons/icon.ico" sizes="any">
 	<link rel="icon" type="image/png" href="/assets/icons/icon.png">
 	<link rel="icon" type="image/svg+xml" href="/assets/icons/icon.svg">
 	<link rel="mask-icon" href="/assets/icons/icon+mask.png" color="#ffffff">
 	<link rel="apple-touch-icon" href="/assets/icons/icon+touch.png" sizes="180x180">
-	<!-- link -->
 	<link rel="author" href="/humans.txt">
 	<link rel="sitemap" href="/sitemap.txt">
 	<link rel="manifest" href="/manifest.json">
@@ -41,7 +37,6 @@
 	<link rel="alternate" href="/updates.json" type="application/json">
 	<link rel="alternate" href="/updates.xml" type="application/rss+xml">
 	<link rel="stylesheet" href="/assets/styles/default.css" media="screen">
-	<!-- schema -->
 	<script type="application/ld+json">
 		{ 
 			"@context": "https://schema.org",
@@ -52,142 +47,37 @@
 		}
 	</script>
 	<script async defer src="/assets/scripts/default.js"></script>
-	<!-- styles -->
 	<style></style>
 </head>
-<body class="page spread">
-	<!-- banner -->
-	<header class="banner">
-		<a href="/">
-			<span>Cover</span>
-			<svg class="icon" viewBox="0 0 24 24" width="28" height="28">
-				<path d="M22.5 20.187v.003s.018.5-.347.865c-.4.4-.858.385-.861.385-1.191.037-6.298.072-9.273-1.572-1.061.606-2.44.998-3.838 1.235-2.561.436-5.478.335-5.48.335 0 0-.452.017-.852-.382-.363-.363-.348-.866-.348-.866L1.5 9.991c0-.911.414-1.773 1.126-2.343L11.219.774S11.538.5 12 .5s.781.274.781.274l8.593 6.874A3 3 0 0 1 22.5 9.991zm-8.559-1.643c2.247.788 5.085.923 6.559.912V9.991a1 1 0 0 0-.375-.781L12 2.71l-8.125 6.5a1 1 0 0 0-.375.781v9.461c1.014.003 2.693-.043 4.35-.321.784-.132 1.565-.31 2.256-.567-1.116-.777-2.06-1.58-2.676-2.626-1.238-2.1-1.018-4.107.2-5.135 1.06-.895 3.003-1.088 4.37.093 1.367-1.181 3.31-.988 4.37-.093 1.218 1.028 1.432 2.974.2 5.135-.516.906-1.521 1.832-2.629 2.606m-2.715-5.795c-.612-1.033-1.823-1.087-2.435-.571-.279.236-.391.6-.391 1.012 0 .562.201 1.165.585 1.842.573 1.009 1.887 1.936 3.015 2.618 1.189-.707 2.447-1.658 3.015-2.618.38-.642.585-1.28.585-1.842 0-.412-.112-.776-.391-1.012-.612-.516-1.823-.462-2.435.571a.898.898 0 0 1-1.548 0" />
-			</svg>
-		</a>
+<body>
+	<header>
+		<a href="/"><span>Cover</span><svg class="icon" viewBox="0 0 32 32" width="32" height="32"><use href="/assets/icons/default.svg#home"/></svg></a>
 		<h1><a href="/">Coming Soon</a></h1>
 		<input id="switch" type="checkbox" hidden>
-		<label for="switch">
-			<span>Contents</span>
-			<svg class="icon" viewBox="0 0 24 24" width="24" height="24">
-				<use href="#switch_open" />
-				<defs>
-					<path id="switch_open" d="M9.043 6.5a1 1 0 0 1 0-2h11a1.001 1.001 0 0 1 0 2h-11Zm0 6.5a1 1 0 0 1 0-2h11a1.001 1.001 0 0 1 0 2h-11Zm0 6.5a1 1 0 0 1 0-2h11a1.001 1.001 0 0 1 0 2h-11ZM4.5 4a1.5 1.5 0 1 1-.001 3.001A1.5 1.5 0 0 1 4.5 4Zm0 6.5a1.5 1.5 0 1 1-.001 3.001A1.5 1.5 0 0 1 4.5 10.5Zm0 6.5a1.5 1.5 0 1 1-.001 3.001A1.5 1.5 0 0 1 4.5 17Z" />
-					<path id="switch_close" d="M10.586 12 6.343 7.757a1 1 0 0 1 1.414-1.414L12 10.586l4.243-4.243a1 1 0 0 1 1.414 1.414L13.414 12l4.243 4.243a1 1 0 0 1-1.414 1.414L12 13.414l-4.243 4.243a1 1 0 0 1-1.414-1.414z" />
-				</defs>
-			</svg>
-		</label>
+		<label for="switch"><span>Contents</span><svg class="icon" viewBox="0 0 32 32" width="32" height="32"><use href="/assets/icons/default.svg#switch_open"/></svg></label>
 	</header>
-
-	<!-- menu -->
-	<nav class="menu">
-<ol>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-	</ol><ol>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-	</ol><ol>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-	</ol><ol>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-	</ol><ol>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-		<li>Not quite the story of France, but soon&hellip;</li>
-		<li>Something Completely Different</li>
-	</ol>
+	<nav>
+		<ol>
+			<li>One fish, </li>
+			<li>two fish, </li>
+			<li>red fish,</li>
+			<li>blue fish&hellip;</li>
+		</ol>
 	</nav>
-
-	<!-- content -->
-	<main class="content">
+	<main>
 		<img src="/assets/images/fish.svg" alt="fish">
-		<p>As it stands today, modern software is built with extreme short-sightedness, designed to be run on disposable electronics and near impossible to maintain. We decided to not participate. Our aim is to create a machine that focuses on answering the handful of little tasks we need, which is centered around building playful audio/visual experiences.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 	</main>
-
-	<!-- imprint -->
-	<footer class="imprint">
+	<footer>
 		<p><a href="/about">&copy; Bryan Rieger</a></p>
 		<ul class="social">
-			<li><a href="https://bsky.app/profile/bryanrieger.bsky.social" rel="external"><span>Bluesky</span><svg class="icon" viewBox="0 0 24 24" width="24" height="24"><use href="/assets/icons/social.svg#bluesky" /></svg></a></li>
-			<li><a href="https://www.threads.net/@bryanrieger" rel="external"><span>Threads</span><svg class="icon" viewBox="0 0 24 24" width="24" height="24"><use href="/assets/icons/social.svg#threads" /></svg></a></li>
-			<li><a href="https://www.instagram.com/bryanrieger" rel="external"><span>Instagram</span><svg class="icon" viewBox="0 0 24 24" width="24" height="24"><use href="/assets/icons/social.svg#instagram" /></svg></a></li>
+			<li><a href="https://bsky.app/profile/bryanrieger.bsky.social" rel="external"><span>Bluesky</span><svg class="icon" viewBox="0 0 32 32" width="32" height="32"><use href="/assets/icons/social.svg#bluesky" /></svg></a></li>
+			<li><a href="https://www.threads.net/@bryanrieger" rel="external"><span>Threads</span><svg class="icon" viewBox="0 0 32 32" width="32" height="32"><use href="/assets/icons/social.svg#threads" /></svg></a></li>
+			<li><a href="https://www.instagram.com/bryanrieger" rel="external"><span>Instagram</span><svg class="icon" viewBox="0 0 32 32" width="32" height="32"><use href="/assets/icons/social.svg#instagram" /></svg></a></li>
 		</ul>
 	</footer>
-
-	<!-- assets -->
-	<svg class="assets" role="none" aria-hidden="true" width="0" height="0">
-		<defs>
-		</defs>
+	<svg role="none" aria-hidden="true" width="0" height="0">
+		<defs></defs>
 	</svg>
 </body>
 </html>

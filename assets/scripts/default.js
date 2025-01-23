@@ -1,20 +1,24 @@
-const banner = document.querySelector("body > header.banner"); 
-const menu = document.querySelector("body > nav.menu");
-const input_switch = document.querySelector("input[id=switch]");
-const label_switch = document.querySelector("label[for=switch]");
-const label_svg = label_switch.querySelector("svg use");
-const label_span = label_switch.querySelector("span");
-const label_text = label_span.innerText;
+const headerElement = document.querySelector("body > header"); 
+const navElement = document.querySelector("body > nav");
+
+const inputSwitch = document.querySelector("input[id=switch]");
+const labelSwitch = document.querySelector("label[for=switch]");
+const labelSVG = labelSwitch.querySelector("svg use");
+const labelSpan = labelSwitch.querySelector("span");
+
+const icon_path = labelSVG.getAttribute("href").split('#')[0];
+const label_text = labelSpan.innerText;
+
 function init() {
-	label_switch.addEventListener("click", function (e) {
-		label_svg.setAttribute("href", (input_switch.checked) ? "#switch_open" : "#switch_close");
-		label_span.innerText = (input_switch.checked) ? label_text : "Close";
+	labelSwitch.addEventListener("click", function (e) {
+		labelSVG.setAttribute("href", (inputSwitch.checked) ? icon_path + "#switch_open" : icon_path + "#switch_close");
+		labelSpan.innerText = (inputSwitch.checked) ? label_text : "Close";
 	});
 	document.addEventListener('click', (event) => {
-		if (( !banner.contains(event.target) && !menu.contains(event.target)) && input_switch.checked) {
-			input_switch.checked = false;
-			label_svg.setAttribute("href", "#switch_open" );
-			label_span.innerText = label_text;
+		if (( !headerElement.contains(event.target) && !navElement.contains(event.target)) && inputSwitch.checked) {
+			inputSwitch.checked = false;
+			labelSVG.setAttribute("href", icon_path + "#switch_open" );
+			labelSpan.innerText = label_text;
 		}
 	});
 }

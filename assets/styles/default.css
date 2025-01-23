@@ -8,6 +8,7 @@
 @import url(/assets/fonts/bogart/@font-face.css);
 @import url(/assets/fonts/dossier/@font-face.css);
 @import url(/assets/fonts/duper/@font-face.css);
+@import url(/assets/fonts/gooper/@font-face.css);
 @import url(/assets/fonts/rooney/@font-face.css);
 @import url(/assets/fonts/rooney/sans/@font-face.css);
 
@@ -26,8 +27,9 @@
   --color-link: #0067fe;
   --color-hover: #e9007f;
   --color-visited: #000000;
-  --color-shadow: rgb(from var(--color-foreground) r g b / 0.25);
-  --color-overlay: rgb(from var(--color-foreground) r g b / 0.10);
+  --color-shade: #000000;
+  --color-shadow: rgb(from var(--color-shade) r g b / 0.25);
+  --color-overlay: rgb(from var(--color-shade) r g b / 0.10);
 
   /* -- fonts -------------------------------------------------------------- */
   
@@ -81,7 +83,6 @@ a:visited {
     fill: var(--color-active);
   }
 }
-
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
@@ -89,188 +90,176 @@ body {
   font-size: 1.125rem;
   font-weight: 400; 
   margin: 0 auto;
-  min-height: 100vh;
   max-width: var(--max-width);
   padding: 0.5rem 1rem 1rem 1rem;
   position: relative;
 }
-em { font-style: italic; }
-form {
-  font-family: var(--font-sans);
-}
-strong { font-weight: 700; }
-
 @media (min-width: 28.5rem) {
   body { padding: 1.5rem 2rem 2rem 2rem; }
 }
+@media (min-width: 60rem) {
+  body:has(.spread) { --max-width: 84rem; padding-left: 2rem; padding-right: 2rem; }
+}
+strong, b { font-weight: 700; }
+em, i { font-style: italic; }
+form { font-family: var(--font-sans); }
 
-/* COMPOUNDS --------------------------------------------------------------- */
+/* LAYOUT ------------------------------------------------------------------ */
 
+/* -- header --------------------------------------------------------------- */
 
-
-/* -- banner --------------------------------------------------------------- */
-
-.banner {
+body > header {
+  align-items: center;
   display: flex;
   font-family: var(--font-sans);
   position: relative;
   /* z-index: 3; */
 }
-.banner a {
+body > header a {
   margin-left: -0.625rem;
 }
-.banner a:link {
+body > header a:link {
   cursor: pointer;
   color: var(--color-foreground);
   fill: var(--color-foreground);
 }
-.banner a:first-of-type .icon {
-  width: 1.75rem;
-  height: 1.75rem;
-  margin: 0.5rem;
-}
-.banner h1 {
+body > header h1 {
   align-items: center;
   display:flex;
   flex: 1;
-  font-weight: 500;
+  font-size: 1.25rem;
+  font-weight: 400;
+  height: 100%;
   justify-content: center;
-  margin: 0.5rem -0.625rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.banner h1 a {
+body > header h1 a {
   margin-left: 0;
   overflow: hidden;
   padding: 0 0.5rem;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.banner h1 span ~ svg:last-of-type {
+body > header h1 span ~ svg:last-of-type {
   display: none;
 }
-.banner label {
+body > header label {
   cursor: pointer;
   margin-right: -0.625rem;
   z-index: 3;
 }
 
 @media (hover: hover) {
-  .banner a:hover,
-  .banner a:focus,
-  .banner label:hover,
-  .banner label:focus  {
+  body > header a:hover,
+  body > header a:focus,
+  body > header label:hover,
+  body > header label:focus  {
     color: var(--color-hover);
     fill: var(--color-hover);
   }
-  .banner a:active,
-  .banner label:active {
+  body > header a:active,
+  body > header label:active {
     color: var(--color-active);
     fill: var(--color-active);
   }
 }
 
-.banner span { display: none; }
+body > header span { display: none; }
 
-.banner:has(input:checked) ~ main,
-.banner:has(input:checked) ~ .imprint, 
-.banner:has(input:checked) ~ .assets { display: none; }
-.banner:has(input:checked) + .menu { display: block; }
-.banner:has(input:not(:checked)) + .menu { display: none; }
+body > header:has(input:checked) ~ main,
+body > header:has(input:checked) ~ footer, 
+body > header:has(input:checked) ~ svg { display: none; }
+body > header:has(input:checked) + nav { display: block; }
+body > header:has(input:not(:checked)) + nav { display: none; }
 
 @media (min-width: 28.5rem) {
-  .banner h1 span ~ svg:first-of-type { display: none; }
-  .banner h1 span ~ svg:last-of-type { display: initial; z-index: -1; }
-  .banner:has(input:checked) ~ main { display: block; }
-  .banner:has(input:checked) ~ .imprint { display: flex; }
-  .banner:has(input:checked) ~ main,
-  .banner:has(input:checked) ~ .imprint {
+  body > header h1 span ~ svg:first-of-type { display: none; }
+  body > header h1 span ~ svg:last-of-type { display: initial; z-index: -1; }
+  body > header:has(input:checked) ~ main { display: block; }
+  body > header:has(input:checked) ~ footer { display: flex; }
+  body > header:has(input:checked) ~ main,
+  body > header:has(input:checked) ~ footer {
     pointer-events: none;
     -webkit-user-select: none;
     user-select: none; 
   }
-  .banner:has(input:checked) ~ .assets {
+  body:has(> header input:checked):after {
     background: var(--color-overlay);
+    content: "";
     display: block;
-    position: fixed;
-    top: 0; left: 0;
+    position: fixed; top: 0; left: 0;
     width: 100vw; height: 100%;
     z-index: var(--layer-overlay);
   }
 }
 
-/* -- navigation ----------------------------------------------------------- */
+/* -- nav ------------------------------------------------------------------ */
 
-.menu {
+body > nav {
   background: var(--color-background);
   font-family: var(--font-serif);
   width: 100%;
   padding: 1rem 1rem 2rem 1rem;
-  position: absolute;
-  top: 0;
-  right: 0;
+  position: absolute; top: 0; right: 0;
   z-index: 2;
 }
 @media (min-width: 28.5rem) {
-  .menu {
+  body > nav {
     border-radius: 1rem;
     box-shadow: 0 0.0625rem 0.25rem var(--color-shadow);
     max-width: 26.5rem;
     padding: 1rem 2rem 2rem 2rem;
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 1rem; right: 1rem;
   }
-  .menu:after {
+  body > nav:after {
     content: " ";
     display: block;
     height: 0.0625rem;
-    position: relative;
-    top: 6rem;
+    position: relative; top: 6rem;
   }
 }
 
-/* -- content -------------------------------------------------------------- */
+/* -- main ----------------------------------------------------------------- */
 
-.content {}
+body > main {}
 
-/* -- imprint -------------------------------------------------------------- */
+/* -- footer --------------------------------------------------------------- */
 
-.imprint {
+body > footer {
   align-items: center;
   display: flex;
   font-family: var(--font-sans);
+  margin-top: 2rem;
 }
-.imprint a:link {
+body > footer a:link {
   cursor: pointer;
-  color: var(--color-foreground);
-  fill: var(--color-foreground);
+  color: var(--color-foreground); fill: var(--color-foreground);
 }
 @media (hover: hover) {
-  .imprint a:hover,
-  .imprint a:focus {
-    color: var(--color-hover);
-    fill: var(--color-hover);
+  body > footer a:hover,
+  body > footer a:focus {
+    color: var(--color-hover); fill: var(--color-hover);
   }
-  .imprint a:active {
-    color: var(--color-active);
-    fill: var(--color-active);
+  body > footer a:active {
+    color: var(--color-active); fill: var(--color-active);
   }
 }
-.imprint p {
+body > footer p {
   flex: 1;
   font-weight: 500;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.imprint ul {
+body > footer ul {
   display: flex;
   margin-right: -0.625rem;
 }
-.imprint li { display: flex; }
-.imprint span { display: none; }
+body > footer li { display: flex; }
+body > footer span { display: none; }
 
 /* MODIFIERS --------------------------------------------------------------- */
 
@@ -292,9 +281,9 @@ strong { font-weight: 700; }
 .first-line-indent {}
 .hyphenation-auto {}
 .icon {
-  width: 1.5rem;
-  height: 1.5rem;
-  margin: 0.625rem;
+  width: 2rem;
+  height: 2rem;
+  margin: 0.375rem;
 }
 .lowercase {}
 .message {}
@@ -321,6 +310,7 @@ strong { font-weight: 700; }
 .serif {
   /* font-family: var(--font-serif); */
 }
+.social {}
 .space-after-paragraph {}
 .spread {}
 .text-align-center {}
@@ -329,10 +319,3 @@ strong { font-weight: 700; }
 .text-align-justify {}
 .transition {}
 .uppercase {}
-
-@media (min-width: 60rem) {
-  .spread {
-    --max-width: 84rem;
-    padding-left: 2rem; padding-right: 2rem; 
-  }
-}
