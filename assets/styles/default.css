@@ -3,7 +3,9 @@
 @layer preflight;
 @import url(/assets/styles/preflight.css) layer(preflight);
 
+
 /* FONTS ------------------------------------------------------------------- */
+
 
 @import url(/assets/fonts/bogart/@font-face.css);
 @import url(/assets/fonts/dossier/@font-face.css);
@@ -12,48 +14,53 @@
 @import url(/assets/fonts/rooney/@font-face.css);
 @import url(/assets/fonts/rooney/sans/@font-face.css);
 
+
 /* VARIABLES --------------------------------------------------------------- */
+
 
 :root { 
   
-  /* -- colors ------------------------------------------------------------- */
+  /* -- var-colors --------------------------------------------------------- */
   
   --color-background: #fffdf8;
   --color-foreground: #323232;
   --color-accent: #eb6345;
   --color-mark: #fff01b;
   --color-strike: #e4008a;
-  --color-active: #ce00de;
-  --color-link: #0067fe;
-  --color-hover: #e9007f;
-  --color-visited: #000000;
+  --color-active: #ad4f1f;
+  --color-link: #5b5bf4;
+  --color-hover: #f36f2d;
+  --color-visited: #4c4cc9;
   --color-shade: #000000;
   --color-shadow: rgb(from var(--color-shade) r g b / 0.25);
   --color-overlay: rgb(from var(--color-shade) r g b / 0.10);
 
-  /* -- fonts -------------------------------------------------------------- */
+  /* -- var-fonts ---------------------------------------------------------- */
   
   --font-sans: 'Rooney Sans', '_Rooney Sans', 'Arial', sans-serif;
   --font-serif: 'Rooney', '_Rooney', 'Georgia', serif;
   --font-cursive: 'Duper', '_Duper', 'Comic Sans MS', 'Comic Sans', cursive;
   --font-monotype: 'Dossier', '_Dossier', 'Courier New', monospace;
-  --font-header: 'Bogart', '_Bogart', 'Rooney', '_Rooney', 'Georgia', serif;
+  --font-header: 'Bogart Alt', '_Bogart Alt', 'Rooney', '_Rooney', 'Georgia', serif;
 
-  /* -- sizes -------------------------------------------------------------- */
+  /* -- var-sizes ---------------------------------------------------------- */
   
   --max-width: 44rem;
-  
+
 }
+
 
 /* ELEMENTS ---------------------------------------------------------------- */
 
-a {
-  text-decoration: none;
-}
+
+/* -- a -------------------------------------------------------------------- */
+
+a,
 a:link {
   cursor: pointer;
   color: var(--color-link);
   fill: var(--color-link);
+  text-decoration: none;
 }
 a:visited {
   color: var(--color-visited);
@@ -70,6 +77,9 @@ a:visited {
     fill: var(--color-active);
   }
 }
+
+/* -- body ----------------------------------------------------------------- */
+
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
@@ -97,21 +107,74 @@ body {
   }
   
 }
+
+/* -- b, strong ------------------------------------------------------------ */
+
 b,
 strong, {
   font-weight: 700;
 }
+
+/* -- i, em ---------------------------------------------------------------- */
+
 i, 
 em {
   font-style: italic;
 }
+
+/* -- form ----------------------------------------------------------------- */
+
 form {
   font-family: var(--font-sans);
 }
 
+/* -- h{n} ----------------------------------------------------------------- */
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+h2 {
+  font-size: 2.0rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-header);
+  line-height: 100%;
+  margin: 2rem 0 0.5rem 0;
+}
+
+/* -- mark ----------------------------------------------------------------- */
+
+mark {
+  background-color: var(--color-mark);
+}
+
+/* -- section -------------------------------------------------------------- */
+
+section {
+  margin: 2rem 0 3rem 0;
+  padding: 1rem 0 2rem 0;
+}
+
+
 /* LAYOUT ------------------------------------------------------------------ */
 
-/* -- header --------------------------------------------------------------- */
+
+/* -- body > header -------------------------------------------------------- */
 
 body > header {
   align-items: center;
@@ -124,6 +187,7 @@ body > header a {
   margin-left: -0.5rem
 }
 
+body > header a,
 body > header a:link {
   cursor: pointer;
   color: var(--color-foreground);
@@ -135,9 +199,11 @@ body > header h1 {
   display:flex;
   flex: 1;
   font-size: 1.25rem;
-  font-weight: 400;
+  font-weight: 500;
   height: 100%;
   justify-content: center;
+  line-height: initial;
+  margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -228,7 +294,7 @@ body > header:has(input:not(:checked)) + nav {
   
 }
 
-/* -- nav ------------------------------------------------------------------ */
+/* -- body > nav ----------------------------------------------------------- */
 
 body > nav {
   background: var(--color-background);
@@ -260,11 +326,11 @@ body > nav {
   
 }
 
-/* -- main ----------------------------------------------------------------- */
+/* -- body > main ---------------------------------------------------------- */
 
 body > main {}
 
-/* -- footer --------------------------------------------------------------- */
+/* -- body > footer -------------------------------------------------------- */
 
 body > footer {
   align-items: center;
@@ -273,6 +339,7 @@ body > footer {
   margin-top: 2rem;
 }
 
+body > footer a,
 body > footer a:link {
   cursor: pointer;
   color: var(--color-foreground);
@@ -314,68 +381,274 @@ body > footer span {
   display: none;
 }
 
+
 /* MODIFIERS --------------------------------------------------------------- */
 
-.animation {}
-.attachment {}
+
+/* -- .animate-{n} --------------------------------------------------------- */
+
+.animate {}
+
+/* -- .blend-mode-{n} ------------------------------------------------------ */
+
 .blend-mode {}
-.bookmark {}
-.chat {}
+
+/* -- .draft --------------------------------------------------------------- */
+
 .draft {}
-.drop-cap {}
+
+/* -- .drop-cap ------------------------------------------------------------ */
+
+.drop-cap > p:first-of-type::first-letter  {
+  float: left;
+  font-size: 300%;
+  line-height: 100%;
+  padding-right: 0.25rem;
+}
+
+/* -- .capitalize ---------------------------------------------------------- */
+
 .capitalize {
   text-transform: capitalize;
 }
+
+/* -- .cursive ------------------------------------------------------------- */
+
 .cursive {
   font-family: var(--font-cursive);
 }
-.character {}
+
+/* -- .contents ------------------------------------------------------------ */
+
 .contents {}
-.description {}
-.dialogue {}
-.fade-in {}
-.fade-out {}
-.first-line-indent {}
-.hyphenation-auto {}
+
+/* -- .fill ---------------------------------------------------------------- */
+
+.fill {
+  position: relative;
+}
+.fill:after {
+  content: " ";
+  display: block;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  position: absolute; 
+  height: 100%;
+  top: 0; left: 50%; right: 50%; width: 100vw;
+  z-index: -1;
+}
+
+.first-line-indent > p:not(:first-of-type) {
+  text-indent: 2rem;
+}
+.first-line-indent > h1 + p:not(:first-of-type),
+.first-line-indent > h2 + p:not(:first-of-type),
+.first-line-indent > h3 + p:not(:first-of-type),
+.first-line-indent > h4 + p:not(:first-of-type),
+.first-line-indent > h5 + p:not(:first-of-type),
+.first-line-indent > h6 + p:not(:first-of-type) {
+  text-indent: 0;
+}
+
+/* -- .folio --------------------------------------------------------------- */
+
+.folio {
+  margin: 2rem 0 1rem 0;
+}
+
+/* -- .hyphenation --------------------------------------------------------- */
+
+.hyphenation {
+  hyphens: auto;
+}
+
+/* -- .icon-{n} ------------------------------------------------------------ */
+
 .icon {
   width: 2rem;
   height: 2rem;
   margin: 0.375rem;
 }
+
+/* -- @keyframes ----------------------------------------------------------- */
+
+@keyframes slide-in {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* -- .lowercase ----------------------------------------------------------- */
+
 .lowercase {
   text-transform: lowercase;
 }
-.message {}
+
+/* -- .marginalia ---------------------------------------------------------- */
+
+.marginalia {
+  
+}
+
+/* -- .monotype ------------------------------------------------------------ */
+
 .monotype {
   font-family: var(--font-monotype);
+  line-height: 1.25;
 }
-.note {}
-.notes {}
-.page {}
-.pages {}
+
+/* -- .pages --------------------------------------------------------------- */
+
+.pages {
+  align-items: center;
+  display: flex;
+  font-family: var(--font-sans);
+  position: relative;
+}
+.pages a,
+.pages li,
+.pages span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pages li {
+  display: flex;
+  flex: 1;
+}
+.pages li:has(a[rel=prev]) {
+  margin-left: -0.5rem;
+}
+.pages li:has(a[rel=next]) {
+  justify-content: flex-end;
+  margin-right: -0.5rem;
+}
+.pages a {
+  align-items: center;
+  display: flex;
+}
+.pages a[rel=prev] {
+  flex-direction: row-reverse;
+  margin-left: -0.5rem;
+  padding-right: 1rem;
+}
+.pages a[rel=next] {
+  margin-left: -0.5rem;
+  padding-left: 1rem;
+}
+.pages svg {
+  flex-shrink: 0;
+}
+
+/* -- .panels-{n} ---------------------------------------------------------- */
+
 .panels {}
-.paper {
-  box-shadow: 0 0.125rem 0.125rem 0.125rem rgb(from var(--color-foreground) r g b / 0.05);
-  clip-path: inset(-0.0625rem -0.0625rem);
+.panels-2up {}
+.panels-3up {}
+.panels-4up {}
+
+/* -- .redacted ------------------------------------------------------------ */
+
+.redacted {
+  background-color: var(--color-foreground);
+  color: var(--color-foreground);
+  cursor: not-allowed;
+  -webkit-user-select: none;
+  user-select: none;
 }
+
+/* -- .sans ---------------------------------------------------------------- */
+
 .sans {
   font-family: var(--font-sans);
 }
-.scene {}
-.script {}
-.script-screen {}
-.script-stage {}
+
+/* -- .serif --------------------------------------------------------------- */
+
 .serif {
   font-family: var(--font-serif);
 }
-.social {}
-.space-after-paragraph {}
-.spread {}
-.text-align-center {}
-.text-align-left {}
-.text-align-right {}
-.text-align-justify {}
+
+/* -- .space-after-paragraph > p ------------------------------------------- */
+
+.space-after-paragraph > p {
+  margin-bottom: 1rem;
+}
+
+/* -- .spoiler-{n} --------------------------------------------------------- */
+
+.spoiler {
+  background-color: transparent;
+  cursor: help;
+  filter: blur(0.25rem);
+}
+
+.spoiled-revealed {
+  background-color: transparent;
+  filter: none;
+}
+
+/* -- .spread  ------------------------------------------------------------- */
+
+.spread { /* see body above */ }
+
+/* -- .text-align-{n} ------------------------------------------------------ */
+
+.text-align-center {
+  text-align: center;
+}
+.text-align-left {
+  text-align: left;
+}
+.text-align-right {
+  text-align: right;
+}
+.text-align-justify {
+  text-align: justify;
+}
+
+/* -- .transition-{n} ------------------------------------------------------ */
+
 .transition {}
+.transition-rise {}
+.transition-fall {}
+.transition-fade-in {}
+.transition-fade-out {}
+.transition-pop {}
+.transition-slide-in-left {}
+.transition-slide-in-right {}
+.transition-slide-out-left {}
+.transition-slide-out-right {}
+
+/* -- .uppercase ----------------------------------------------------------- */
+
 .uppercase {
   text-transform: uppercase;
 }
+
+/* -- .verse --------------------------------------------------------------- */
+
+.verse {}
+
+
+/* EOF --------------------------------------------------------------------- */
+
+
+.attachment {}
+.bookmark {}
+.chat {}
+.character {}
+.description {}
+.dialogue {}
+.message {}
+.note {}
+.notes {}
+.page {}
+.scene {}
+.script {}
+.social {}
