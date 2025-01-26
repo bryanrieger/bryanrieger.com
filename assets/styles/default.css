@@ -23,7 +23,7 @@
   /* -- var-colors --------------------------------------------------------- */
   
   --color-background: #fffdf8;
-  --color-foreground: #323232;
+  --color-foreground: #333333;
   --color-accent: #eb6345;
   --color-mark: #fff01b;
   --color-strike: #e4008a;
@@ -88,22 +88,15 @@ body {
   font-weight: 400; 
   margin: 0 auto;
   max-width: var(--max-width);
-  padding: 0.5rem 1rem 1rem 1rem;
+  padding: 0 1rem;
   position: relative;
 }
-@media (min-width: 28.5rem) {
-  
-  body {
-    padding: 1.5rem 2rem 2rem 2rem;
-  }
-  
-}
+
 @media (min-width: 60rem) {
   
   body:has(.spread) {
     --max-width: 84rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding: 0 2rem;
   }
   
 }
@@ -154,20 +147,28 @@ h5,
 h6 {
   font-family: var(--font-header);
   line-height: 100%;
-  margin: 2rem 0 0.5rem 0;
+  margin: 3rem 0 0.5rem 0;
 }
 
 /* -- mark ----------------------------------------------------------------- */
 
 mark {
+  color: var(--color-foreground);
   background-color: var(--color-mark);
 }
 
 /* -- section -------------------------------------------------------------- */
 
 section {
+  overflow-y: clip;
   margin: 2rem 0 3rem 0;
-  padding: 1rem 0 2rem 0;
+  padding: 2rem 0 2rem 0;
+}
+section:after, body > header:after, body > main > header:after {
+  background-color: color-mix(in srgb, var(--color-accent) 15%, var(--color-background));
+}
+section > :first-child:is(h1, h2, h3, h4, h5, h6) {
+  margin-top: 1rem;
 }
 
 
@@ -180,6 +181,7 @@ body > header {
   align-items: center;
   display: flex;
   font-family: var(--font-sans);
+  padding-top: 0.5rem;
   position: relative;
 }
 
@@ -188,7 +190,8 @@ body > header a {
 }
 
 body > header a,
-body > header a:link {
+body > header a:link,
+body > header label {
   cursor: pointer;
   color: var(--color-foreground);
   fill: var(--color-foreground);
@@ -199,7 +202,7 @@ body > header h1 {
   display:flex;
   flex: 1;
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 400;
   height: 100%;
   justify-content: center;
   line-height: initial;
@@ -261,16 +264,23 @@ body > header:has(input:not(:checked)) + nav {
 
 @media (min-width: 28.5rem) {
   
+  body > header {
+    padding-top: 1.25rem;
+  }
+  
   body > header h1 span ~ svg:first-of-type {
     display: none;
   }
+  
   body > header h1 span ~ svg:last-of-type {
     display: initial;
     z-index: -1;
   }
+  
   body > header:has(input:checked) ~ main {
     display: block;
   }
+  
   body > header:has(input:checked) ~ footer {
     display: flex;
   }
@@ -306,6 +316,10 @@ body > nav {
   z-index: 2;
 }
 
+body > nav > *:last-child {
+  margin-top: 2rem;
+}
+
 @media (min-width: 28.5rem) {
   
   body > nav {
@@ -314,7 +328,7 @@ body > nav {
     max-width: 26.5rem;
     padding: 1rem 2rem 2rem 2rem;
     position: absolute;
-    top: 1rem; right: 1rem;
+    top: 1.0rem; right: 0.2rem;
   }
   
   body > nav:after {
@@ -337,6 +351,15 @@ body > footer {
   display: flex;
   font-family: var(--font-sans);
   margin-top: 2rem;
+  padding: 1rem 0 2rem 0;
+}
+
+body > footer p {
+  flex: 1;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 body > footer a,
@@ -359,28 +382,6 @@ body > footer a:link {
   }
   
 }
-
-body > footer p {
-  flex: 1;
-  font-weight: 400;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-body > footer ul {
-  display: flex;
-  margin-right: -0.625rem;
-}
-
-body > footer li {
-  display: flex;
-}
-
-body > footer span {
-  display: none;
-}
-
 
 /* MODIFIERS --------------------------------------------------------------- */
 
@@ -420,7 +421,63 @@ body > footer span {
 
 /* -- .contents ------------------------------------------------------------ */
 
-.contents {}
+.contents {
+  
+}
+.contents li {
+  padding: 0.25rem;
+  position: relative;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-foreground) 10%, var(--color-background));
+}
+.contents li:first-of-type {
+  border-top: 1px solid color-mix(in srgb, var(--color-foreground) 10%, var(--color-background));
+}
+.contents a {
+  color: var(--color-foreground);
+  display: block;
+  line-height: 1.2;
+  margin: 0 -0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+}
+.contents a span {
+  display: block;
+  font-size: 1.0rem;
+  font-style: italic;
+  font-weight: 300;
+  padding: 0.25rem 0;
+}
+
+@media (min-width: 28.5rem) {
+  .contents a {
+    margin: 0 -1rem;
+    padding: 0.5 1.0rem;
+  }
+}
+
+@media (hover: hover) {
+  
+  .contents a:hover,
+  .contents a:focus {
+    background-color: color-mix(in srgb, var(--color-hover) 10%, var(--color-background));
+    color: var(--color-hover);
+  }
+  .contents a:active {
+    color: var(--color-active);
+  }
+  .contents .index a,
+  .contents .index a:hover,
+  .contents .index a:focus,
+  .contents .index a:active  {
+    color: color-mix(in srgb, var(--color-foreground) 50%, var(--color-background));
+  }
+}
+
+.contents .index a {
+  background: color-mix(in srgb, var(--color-foreground) 7.5%, var(--color-background));
+  cursor: default;
+}
+
 
 /* -- .fill ---------------------------------------------------------------- */
 
@@ -441,12 +498,7 @@ body > footer span {
 .first-line-indent > p:not(:first-of-type) {
   text-indent: 2rem;
 }
-.first-line-indent > h1 + p:not(:first-of-type),
-.first-line-indent > h2 + p:not(:first-of-type),
-.first-line-indent > h3 + p:not(:first-of-type),
-.first-line-indent > h4 + p:not(:first-of-type),
-.first-line-indent > h5 + p:not(:first-of-type),
-.first-line-indent > h6 + p:not(:first-of-type) {
+.first-line-indent > :is(h1, h2, h3, h4, h5, h6) + p:not(:first-of-type) {
   text-indent: 0;
 }
 
@@ -474,7 +526,7 @@ body > footer span {
 
 @keyframes slide-in {
   from {
-    transform: translateY(100px);
+    transform: translateY(100%);
     opacity: 0;
   }
   to {
@@ -574,6 +626,48 @@ body > footer span {
   font-family: var(--font-serif);
 }
 
+/* -- .social -------------------------------------------------------------- */
+
+.social {
+  align-items: center;
+  display: flex;
+  margin-right: -0.625rem;
+  justify-content: flex-end;
+}
+.social li:first-of-type:not(:has(a)) {
+  flex: 1;
+  font-family: var(--font-sans);
+  overflow: hidden;
+}
+.social li:first-of-type:not(:has(a)) span {
+  display: inline-block; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.social  li {
+  display: flex;
+}
+.social  span {
+  display: none;
+}
+.social a,
+.social a:link {
+  color: var(--color-foreground);
+  fill: var(--color-foreground);
+}
+@media (hover: hover) {
+  .social a:hover,
+  .social a:focus  {
+    color: var(--color-hover);
+    fill: var(--color-hover);
+  }
+  .social a:active {
+    color: var(--color-active);
+    fill: var(--color-active);
+  }
+}
+
 /* -- .space-after-paragraph > p ------------------------------------------- */
 
 .space-after-paragraph > p {
@@ -651,4 +745,7 @@ body > footer span {
 .page {}
 .scene {}
 .script {}
-.social {}
+.social {
+  
+}
+

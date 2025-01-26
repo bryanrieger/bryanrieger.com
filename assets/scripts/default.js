@@ -1,5 +1,4 @@
 
-
 /* ƒn() delayFor ----------------------------------------------------------- */
 
 const delayFor = (milliseconds) => { 
@@ -31,7 +30,7 @@ const scrollObserver = new IntersectionObserver(entries => {
 			// entry.target.classList.remove('intersecting');
 		}
 	});
-}, { rootMargin: "10px", threshold: 1.0 });
+}, { rootMargin: '0 0 -50px 0', threshold: 1.0 });
 
 const observables = document.querySelectorAll(".observable");
 if (observables) {
