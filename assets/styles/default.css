@@ -9,7 +9,7 @@
 
 @import url(/assets/fonts/bogart/@font-face.css);
 @import url(/assets/fonts/dossier/@font-face.css);
-@import url(/assets/fonts/duper/@font-face.css);
+@import url(/assets/fonts/monologue/@font-face.css);
 @import url(/assets/fonts/gooper/@font-face.css);
 @import url(/assets/fonts/rooney/@font-face.css);
 @import url(/assets/fonts/rooney/sans/@font-face.css);
@@ -39,15 +39,23 @@
   
   --font-sans: 'Rooney Sans', '_Rooney Sans', 'Arial', sans-serif;
   --font-serif: 'Rooney', '_Rooney', 'Georgia', serif;
-  --font-cursive: 'Duper', '_Duper', 'Comic Sans MS', 'Comic Sans', cursive;
+  --font-cursive: 'Monologue', '_Monologue', 'Comic Sans MS', 'Comic Sans', cursive;
   --font-monotype: 'Dossier', '_Dossier', 'Courier New', monospace;
   --font-header: 'Bogart Alt', '_Bogart Alt', 'Rooney', '_Rooney', 'Georgia', serif;
 
   /* -- var-sizes ---------------------------------------------------------- */
   
   --max-width: 44rem;
+  --spacing: 1rem;
 
 }
+
+@media (min-width: 28.5rem) {
+  :root {
+    --spacing: 2rem;
+  }
+}
+
 
 
 /* ELEMENTS ---------------------------------------------------------------- */
@@ -78,6 +86,34 @@ a:visited {
   }
 }
 
+/* -- article -------------------------------------------------------------- */
+
+article {
+
+}
+
+/* -- aside ---------------------------------------------------------------- */
+
+aside {
+
+}
+
+/* -- blockquote ----------------------------------------------------------- */
+
+blockquote {
+  border-left: 2px solid black;
+  margin: 2rem 0 2rem 0;
+  padding: 0 0 0 2rem;
+}
+blockquote p {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+blockquote cite {
+  
+}
+
 /* -- body ----------------------------------------------------------------- */
 
 body {
@@ -88,22 +124,16 @@ body {
   font-weight: 400; 
   margin: 0 auto;
   max-width: var(--max-width);
-  padding: 0 1rem;
+  padding: 0 var(--spacing);;
   position: relative;
-}
-
-@media (min-width: 28.5rem) {
-  body {
-    padding: 0 2rem;
-  }
-
 }
 
 @media (min-width: 60rem) {
   
   body:has(.spread) {
+    
     --max-width: 84rem;
-
+    
   }
   
 }
@@ -115,11 +145,30 @@ strong, {
   font-weight: 700;
 }
 
+/* -- cite ----------------------------------------------------------------- */
+
+cite {
+
+}
+
 /* -- i, em ---------------------------------------------------------------- */
 
 i, 
 em {
   font-style: italic;
+}
+
+/* -- figure --------------------------------------------------------------- */
+
+figure {
+  margin: 2rem 0 2rem 0;
+}
+
+figcaption {
+  font-size: 1rem;
+  font-style: italic;
+  padding: 0 1rem;
+  text-align: center;
 }
 
 /* -- form ----------------------------------------------------------------- */
@@ -157,11 +206,68 @@ h6 {
   margin: 3rem 0 0.5rem 0;
 }
 
+/* -- hr ------------------------------------------------------------------- */
+
+hr {
+  width: 100%;
+  height: auto;
+}
+
+/* -- img ------------------------------------------------------------------ */
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* -- li ------------------------------------------------------------------- */
+
+li {
+
+}
+
 /* -- mark ----------------------------------------------------------------- */
 
 mark {
   color: var(--color-foreground);
   background-color: var(--color-mark);
+}
+
+/* -- menu ----------------------------------------------------------------- */
+
+menu {
+
+}
+
+/* -- ol ------------------------------------------------------------------- */
+
+ol {
+  list-style: outside;
+  margin: 2rem 0 2rem 2rem;
+}
+
+/* -- p -------------------------------------------------------------------- */
+
+p {
+  
+}
+
+/* -- picture -------------------------------------------------------------- */
+
+picture {
+  
+}
+
+/* -- q -------------------------------------------------------------------- */
+
+q {
+  
+}
+
+/* -- s -------------------------------------------------------------------- */
+
+s {
+  
 }
 
 /* -- section -------------------------------------------------------------- */
@@ -171,13 +277,34 @@ section {
   margin: 2rem 0 3rem 0;
   padding: 2rem 0 2rem 0;
 }
-section:after, body > header:after, body > main > header:after {
-  background-color: color-mix(in srgb, var(--color-accent) 15%, var(--color-background));
-}
+
 section > :first-child:is(h1, h2, h3, h4, h5, h6) {
   margin-top: 1rem;
 }
 
+/* -- small ---------------------------------------------------------------- */
+
+small {
+  
+}
+
+/* -- svg ------------------------------------------------------------------ */
+
+svg {
+  
+}
+
+/* -- u -------------------------------------------------------------------- */
+
+u {
+  
+}
+
+/* -- ul ------------------------------------------------------------------- */
+
+ul {
+
+}
 
 /* LAYOUT ------------------------------------------------------------------ */
 
@@ -198,11 +325,13 @@ body > header a {
 
 body > header a,
 body > header a:link,
+body > header a:visited,
 body > header label {
   cursor: pointer;
   color: var(--color-foreground);
   fill: var(--color-foreground);
 }
+
 
 body > header h1 {
   align-items: center;
@@ -323,6 +452,12 @@ body > nav {
   z-index: 2;
 }
 
+body > nav ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 body > nav > *:last-child {
   margin-top: 2rem;
 }
@@ -396,6 +531,24 @@ body > footer a:link {
 /* -- .animate-{n} --------------------------------------------------------- */
 
 .animate {}
+
+/* -- .bleed --------------------------------------------------------------- */
+
+.bleed {
+  position: relative;
+}
+
+.bleed:after {
+  background-color: color-mix(in srgb, var(--color-accent) 15%, var(--color-background));
+  content: " ";
+  display: block;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  position: absolute; 
+  height: 100%;
+  top: 0; left: 50%; right: 50%; width: 100vw;
+  z-index: -1;
+}
 
 /* -- .blend-mode-{n} ------------------------------------------------------ */
 
@@ -485,22 +638,7 @@ body > footer a:link {
   cursor: default;
 }
 
-
-/* -- .fill ---------------------------------------------------------------- */
-
-.fill {
-  position: relative;
-}
-.fill:after {
-  content: " ";
-  display: block;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  position: absolute; 
-  height: 100%;
-  top: 0; left: 50%; right: 50%; width: 100vw;
-  z-index: -1;
-}
+/* -- .first-line-ident ---------------------------------------------------- */
 
 .first-line-indent > p:not(:first-of-type) {
   text-indent: 2rem;
@@ -567,8 +705,12 @@ body > footer a:link {
   align-items: center;
   display: flex;
   font-family: var(--font-sans);
+  list-style: none;
+  margin: 0;
+  padding: 0;
   position: relative;
 }
+
 .pages a,
 .pages li,
 .pages span {
@@ -576,40 +718,99 @@ body > footer a:link {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+
+
 .pages li {
   display: flex;
   flex: 1;
 }
+
 .pages li:has(a[rel=prev]) {
   margin-left: -0.5rem;
 }
+
 .pages li:has(a[rel=next]) {
   justify-content: flex-end;
   margin-right: -0.5rem;
 }
+
 .pages a {
   align-items: center;
   display: flex;
 }
+
 .pages a[rel=prev] {
   flex-direction: row-reverse;
   margin-left: -0.5rem;
   padding-right: 1rem;
 }
+
 .pages a[rel=next] {
   margin-left: -0.5rem;
   padding-left: 1rem;
 }
+
 .pages svg {
   flex-shrink: 0;
 }
 
-/* -- .panels-{n} ---------------------------------------------------------- */
+/* -- .panels -------------------------------------------------------------- */
 
-.panels {}
-.panels-2up {}
-.panels-3up {}
-.panels-4up {}
+.panels {
+  grid-column-gap: 2vw;
+  grid-row-gap: 2vw;
+}
+
+.panels > * {
+  display: block;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+.panels figcaption {
+  grid-column: 1/-1;
+}
+
+.panels {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.panels > :is(img, picture, svg):last-of-type:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
+.panels:has(> :last-child:nth-child(4)) {
+
+}
+
+@media (min-width: 28.5rem) {
+  
+  .panels {
+    grid-column-gap: 0.75rem;
+    grid-row-gap: 0.75rem;
+  }
+  
+}
+
+@media (min-width: 60rem) {
+  
+  .spread .panels:has(> :is(img, picture, svg):last-of-type:nth-child(3)){
+    grid-template-columns: repeat(3, 1fr);
+    grid-column: auto;
+  }
+  
+  .spread .panels > :is(img, picture, svg):last-of-type:nth-child(3) {
+    grid-column: auto;
+  }
+  
+  .spread .panels:has(> :is(img, picture, svg):last-of-type:nth-child(4)){
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+  }
+  
+}
 
 /* -- .redacted ------------------------------------------------------------ */
 
@@ -681,6 +882,12 @@ body > footer a:link {
   margin-bottom: 1rem;
 }
 
+/* -- .spill  -------------------------------------------------------------- */
+
+.spill {
+  margin: auto calc(var(--spacing) * -0.75);
+}
+
 /* -- .spoiler-{n} --------------------------------------------------------- */
 
 .spoiler {
@@ -734,7 +941,9 @@ body > footer a:link {
 
 /* -- .verse --------------------------------------------------------------- */
 
-.verse {}
+.verse {
+  
+}
 
 
 /* EOF --------------------------------------------------------------------- */
