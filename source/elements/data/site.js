@@ -11,7 +11,7 @@ export default {
 	title: "Bryan Rieger",
 	description: "Bryan Rieger is an illustrator and writier from Montréal, Canada.",
 	keywords: "illustration, writing, storytelling, stories, books, comics, picture books, chapter books, children, kids, middle-grade, graphic novels, sequential art, role-playing games, drawing, doodles",
-	copyright: "Copyright Bryan Rieger. All rights reserved.",
+	copyright: "Copyright (c) Bryan Rieger. All rights reserved.",
 	author: {
 		name: "Bryan Rieger",
 		email: "hello@bryanrieger.com",
@@ -99,7 +99,12 @@ export default {
 	referrer: "no-referrer-when-downgrade",
 	robots: "all",
 	humans: "/humans.txt",
-	feed: "/feed.xml",
+	feed: {
+		favicon: "/assets/icons/feed/favicon.png",
+		icon: "/assets/icons/feed/icon.png",
+		json: "/feed.json",
+		xml: "/feed.xml"
+	},
 	sitemap: "/sitemap.xml",
 	worker: "/assets/scripts/worker.js",
 	color: {
@@ -152,7 +157,7 @@ export default {
 			{ "src": "/assets/images/manifest/screenshots/portrait.png", "label": "Bryan Rieger", "type": "image/png", "sizes": "540x720", "form_factor": "narrow" }
 		]
 	},
-	robots_txt: {
+	robots: {
 		disallow: [
 			"Ai2Bot",
 			"Ai2Bot-Dolma",

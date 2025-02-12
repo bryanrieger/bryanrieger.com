@@ -1,5 +1,8 @@
+.wrangler/
 build/
 node_modules/
+
+wrangler.toml
 
 **/.git
 **/.DS_Store

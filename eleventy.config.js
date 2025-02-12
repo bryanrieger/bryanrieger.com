@@ -71,15 +71,6 @@ export default async function(eleventyConfig) {
 			return minified;
 		}
 		
-		if ((this.page.outputPath || "").endsWith(".xml")) {
-			let minified = htmlmin.minify(content, {
-				removeComments: true,
-				useShortDoctype: true,
-				collapseWhitespace: true
-			});
-			return minified;
-		}
-		
 		return content;
 	});
 	

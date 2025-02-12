@@ -6,17 +6,16 @@ eleventyExcludeFromCollections: true
 {
     "version": "https://jsonfeed.org/version/1",
     "home_page_url": "https://{{ site.domain }}",
-    "feed_url": "https://{{ site.domain }}/updates.json",
-    "icon": "https://{{ site.domain }}/assets/icons/icon.png",
-    "favicon": "https://{{ site.domain }}/assets/icons/favicon.png",
+    "feed_url": "https://{{ site.domain }}{{ site.feed.json }}",
+    "icon": "https://{{ site.domain }}{{ site.feed.icon }}",
+    "favicon": "https://{{ site.domain }}{{ site.feed.favicon }}",
     "language": "{{ site.lang }}",
     "title": "{{ site.title }}",
     "description": "{{ site.description }}",
     "authors": [
         {
           "name": "{{ site.author.name }}",
-          "url": "https://{{ site.domain }}",
-          "avatar": "https://{{ site.domain }}/assets/images/avatar-512x512.png"
+          "url": "https://{{ site.domain }}"
         }
     ],
     "items": [

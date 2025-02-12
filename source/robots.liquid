@@ -3,7 +3,12 @@ layout: false
 permalink: /robots.txt
 eleventyExcludeFromCollections: true
 ---
-{%- for user_agent in site.robots_txt.disallow %}
+User-Agent: *
+Disallow: /api/
+Disallow: /thank-you$
+Allow: /
+
+{%- for user_agent in site.robots.disallow %}
 User-agent: {{ user_agent }}
 {%- endfor %}
 Disallow: /

@@ -6,23 +6,23 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <language>{{ site.lang }}</language>
-  <id>{{ site.url }}</id>
-  <icon>https://{{ site.domain }}/assets/icons/icon.png</icon>
+  <id>{{ site.domain }}</id>
+  <icon>https://{{ site.domain }}{{ site.feed.icon }}</icon>
   <link rel="alternate" href="https://{{ site.domain }}"/>
-  <link rel="self" href="https://{{ site.domain }}/updates.xml" type="application/rss+xml"/>
-  <title>{{ site.name }}</title>
+  <link rel="self" href="https://{{ site.domain }}{{ site.feed.xml }}" type="application/rss+xml"/>
+  <title>{{ site.title }}</title>
   <subtitle>{{ site.description }}</subtitle>
   <author>
-      <name>{{ site.author }}</name>
+      <name>{{ site.author.name }}</name>
       <uri>https://{{ site.domain }}</uri>
   </author>
-  <rights>Copyright (c) 2025, Bryan Rieger</rights>
-  <generator>Handmade with ❤️ in Montréal, Canada.</generator>
+  <rights>{{ site.copyright }}</rights>
+  <generator>{{ site.generator }}</generator>
   <updated>{{ collections.all | collectionLastUpdatedDate | dateToRfc3339 }}</updated>
   {%- for post in collections.all | reverse %}
   <entry>
     <id>{{ site.domain }}{{ post.url }}</id>
-    <link href="https://{{ site.domain }}{{ post.url }}" rel="alternate" type="text/html" />
+    <link href="https://{{ site.domain }}{{ post.url }}" rel="alternate" type="text/html"/>
     <title>{{ post.data.title }}</title>
     <summary>{{ post.data.description }}</summary>
     <published>{{ post.date | dateToRfc3339 }}</published>

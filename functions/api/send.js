@@ -1,0 +1,33 @@
+import { Resend } from "resend";
+
+const submitForm = async (context) => {
+  const resend = new Resend(context.env.RESEND_API_KEY);
+
+  let input = await context.request.formData();
+
+  let data = {}
+  for (let [key, value] of input) {
+    let tmp = data[key];
+    if (tmp === undefined) {
+      data[key] = value;
+    } else {
+      data[key] = [].concat(tmp, value);
+    }
+  }
+
+  if (data["honeypot"] != "on" && data["action"] == "send") {
+    if (data["name"] != "" && data["email"] != "" & data["message"] != "") {
+      let body = "";
+      const message = await resend.emails.send({
+        from: 'Wendell the Web Form <hello@bryanrieger.com>',
+        to: 'bryan@yiibu.com',
+        subject: 'Someone sent you a message!',
+        html: '<h2>' + data["name"] + ' has sent you a message!</h2><p><strong>From: </strong> ' + data["name"] + ' <em>&lt;' + data["email"] + '&gt;</em></p><p>' + data["message"] + '</p>'
+      });
+    }
+  }
+
+  return Response.redirect("https://bryanrieger.com/thank-you", 303);
+}
+
+export const onRequest = [submitForm];

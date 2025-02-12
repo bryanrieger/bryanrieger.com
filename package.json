@@ -14,21 +14,25 @@
   },
   "type": "module",
   "dependencies": {
+    "resend": "^4.1.2"
+  },
+  "scripts": {
+    "design": "npm run clean && sleep 1.0 && open -n -a 'Google Chrome' --args --profile-directory='Profile 2' 'http://localhost:8080' & eleventy --serve",
+    "build": "npm run clean && eleventy && npm run optimize",
+    "test": "npm run build && sleep 1.0 && open -n -a 'Google Chrome' --args --profile-directory='Profile 2' 'http://localhost' & caddy file-server -r ./build",
+    "wrangle": "wrangler pages dev",
+    "optimize": "node ./eleventy.minify.cjs ./build",
+    "clean": "rm -rfv build"
+  },
+  "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-navigation": "^0.3.5",
     "@11ty/eleventy-plugin-bundle": "^3.0.0",
     "@11ty/eleventy-plugin-rss": "^2.0.2",
-    "resend": "^4.1.2",
     "clean-css": "^5.3.3",
     "html-minifier-terser": "^7.2.0",
     "luxon": "^3.5.0",
-    "uglify-js": "^3.19.3"
-  },
-  "scripts": {
-    "dev": "npm run clean && sleep 1.0 && open -n -a 'Google Chrome' --args --profile-directory='Profile 2' 'http://localhost:8080' & eleventy --serve",
-    "test": "npm run build && sleep 1.0 && open -n -a 'Google Chrome' --args --profile-directory='Profile 2' 'http://localhost' & caddy file-server -r ./build",
-    "build": "npm run clean && eleventy && npm run minify",
-    "minify": "node ./eleventy.minify.cjs ./build",
-    "clean": "rm -rfv build"
+    "uglify-js": "^3.19.3",
+    "wrangler": "^3.108.1"
   }
 }
