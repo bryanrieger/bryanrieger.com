@@ -1,0 +1,17 @@
+@font-face { font-family: 'Gooper'; font-weight: 100; font-style: normal; font-display: swap; src: url('/assets/fonts/gooper/thin.woff2') format('woff2'); }
+@font-face { font-family: 'Gooper'; font-weight: 100; font-style: italic; font-display: swap; src: url('/assets/fonts/gooper/thin-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Gooper'; font-weight: 300; font-style: normal; font-display: swap; src: url('/assets/fonts/gooper/Light.woff2') format('woff2'); }
+@font-face { font-family: 'Gooper'; font-weight: 300; font-style: italic; font-display: swap; src: url('/assets/fonts/gooper/light-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Gooper'; font-weight: 400; font-style: normal; font-display: swap; src: url('/assets/fonts/gooper/regular.woff2') format('woff2'); }
+@font-face { font-family: 'Gooper'; font-weight: 400; font-style: italic; font-display: swap; src: url('/assets/fonts/gooper/regular-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Gooper'; font-weight: 600; font-style: normal; font-display: swap; src: url('/assets/fonts/gooper/semibold.woff2') format('woff2'); }
+@font-face { font-family: 'Gooper'; font-weight: 600; font-style: italic; font-display: swap; src: url('/assets/fonts/gooper/semibold-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Gooper'; font-weight: 500; font-style: normal; font-display: swap; src: url('/assets/fonts/gooper/medium.woff2') format('woff2'); }
+@font-face { font-family: 'Gooper'; font-weight: 500; font-style: italic; font-display: swap; src: url('/assets/fonts/gooper/medium-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Gooper'; font-weight: 700; font-style: normal; font-display: swap; src: url('/assets/fonts/gooper/bold.woff2') format('woff2'); }
+@font-face { font-family: 'Gooper'; font-weight: 700; font-style: italic; font-display: swap; src: url('/assets/fonts/gooper/bold-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Gooper'; font-weight: 900; font-style: normal; font-display: swap; src: url('/assets/fonts/gooper/black.woff2') format('woff2'); }
+@font-face { font-family: 'Gooper'; font-weight: 900; font-style: italic; font-display: swap; src: url('/assets/fonts/gooper/black-talic.woff2') format('woff2'); }
+@font-face { font-family: 'Gooper'; font-weight: 1000; font-style: normal; font-display: swap; src: url('/assets/fonts/gooper/super.woff2') format('woff2'); }
+@font-face { font-family: 'Gooper'; font-weight: 1000; font-style: italic; font-display: swap; src: url('/assets/fonts/gooper/super-italic.woff2') format('woff2'); }
+@font-face { font-family: "_Gooper"; size-adjust: 100.0%; src: local("Georgia"); }

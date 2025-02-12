@@ -1,0 +1,52 @@
+<title>{% if title %} {{ title }} {% else %} {{ site.title }} {% endif %}</title>
+<!-- meta -->
+<meta charset="{{ site.charset }}" />
+<meta name="viewport" content="{{ site.viewport }}" />
+<meta name="referrer" content="{{ site.referrer }}" />
+<meta name="robots" content="{{ site.robots }}" />
+<meta name="rating" content="{{ site.rating }}" />
+<meta name="author" content="{{ site.author.name }}" />
+<meta name="copyright" content="{{ site.copyright }}" />
+<meta name="description" content="{% if description %} {{ description }} {% else %} {{ site.description }} {% endif %}" />
+<meta name="keywords" content="{{ site.keywords }}, {{ keywords }}" />
+<meta name="generator" content="{{ site.generator }}" />
+<meta name="theme-color" content="{% if theme %} {{ theme }} {% else %} {{ site.color.theme }} {% endif %}" />
+<meta name="color-scheme" content="{{ site.color.scheme }}" />
+<!-- social -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@{{ site.author.social.twitter }}" />
+<meta property="og:logo" content="https://{{ site.domain }}{{ site.logo }}" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="{{ site.locale }}" />
+<meta property="og:title" content="{% if title %} {{ title }} {% else %} {{ site.title }} {% endif %}" />
+<meta property="og:url" content="https://{{ site.domain }}{{ page.url }}" />
+<meta property="og:description" content="{% if description %} {{ description }} {% else %} {{ site.description }} {% endif %}" />
+<meta property="og:image" content="https://{{ site.domain }}{% if image.src %}{{ image.src }}{% else %}{{ site.image.src }}{% endif %}" />
+<meta property="og:image:alt" content="{% if image.alt %} {{ image.alt }} {% else %} {{ site.image.alt }} {% endif %}" />
+<!-- preload -->
+<link rel="preload" as="font" href="/assets/fonts/inter/regular.woff2" type="font/woff2" crossorigin />
+<link rel="preload" as="font" href="/assets/fonts/nudge/normal/black.woff2" type="font/woff2" crossorigin />
+{%- getBundle "html", "<link>" %}
+<link rel="preload" as="style" href="/assets/styles/default.css" />
+<link rel="preload" as="script" href="/assets/scripts/default.js" />
+<!-- link -->
+<link rel="icon" href="{{ site.icon.ico }}" sizes="32x32" />
+<link rel="icon" type="image/png" href="{{ site.icon.png }}" />
+<link rel="icon" type="image/svg+xml" href="{{ site.icon.svg }}" />
+<link rel="mask-icon" href="{{ site.icon.mask }}" color="{{ site.icon.color }}" />
+<link rel="apple-touch-icon" href="{{ site.icon.touch }}" />
+<link rel="author" href="{{ site.humans }}" />
+<link rel="sitemap" href="{{ site.sitemap }}" />
+<link rel="manifest" href="{{ site.manifest.file }}" />
+<link rel="canoncial" href="https://{{ site.domain }}{{ page.url }}" />
+<link rel="alternate" type="application/rss+xml" href="{{ site.feed }}" title="{{ site.title }}" />
+<link rel="stylesheet" href="/assets/styles/default.css" media="screen" />
+<!-- search -->
+<script type="application/ld+json">{ "@context": {{ site.schema.context }}, "@type": "{{ site.schema.type }}", "name": "{{ site.schema.name }}", "url": "{{ site.schema.url }}", "logo": "{{ site.schema.image }}" }</script>
+<!-- page scripts -->
+<script async defer src="/assets/scripts/default.js"></script>
+<!-- page styles -->
+<style>
+	{%- include "page/styles.css" -%}
+	{%- getBundle "css" -%}
+</style>

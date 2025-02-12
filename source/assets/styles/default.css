@@ -1,0 +1,967 @@
+@charset "UTF-8";
+/* 
+@layer preflight {
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #000;
+  }
+  ::before,
+  ::after {
+    --content: '';
+  }
+  html,
+  :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    font-family: 'Arial', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    margin: 0;
+    line-height: inherit;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    text-decoration: underline dotted;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+  b,
+  strong {
+    font-weight: bolder;
+  }
+  code,
+  kbd,
+  samp,
+  pre {
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  button,
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+  }
+  button,
+  select {
+    text-transform: none;
+  }
+  button,
+  input:where([type='button']),
+  input:where([type='reset']),
+  input:where([type='submit']) {
+    -webkit-appearance: button;
+    background-color: transparent;
+    background-image: none;
+  }
+  :-moz-focusring {
+    outline: auto;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  ::-webkit-inner-spin-button,
+  ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [type='search'] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+  }
+  summary {
+    display: list-item;
+  }
+  blockquote,
+  dl,
+  dd,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  hr,
+  figure,
+  p,
+  pre {
+    margin: 0;
+  }
+  fieldset {
+    margin: 0;
+    padding: 0;
+  }
+  legend {
+    padding: 0;
+  }
+  ol,
+  ul,
+  menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  dialog {
+    padding: 0;
+  }
+  textarea {
+    resize: vertical;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    opacity: 1;
+    color: #ddd;
+  }
+  button,
+  [role="button"] {
+    cursor: pointer;
+  }
+  :disabled {
+    cursor: default;
+  }
+  img,
+  svg,
+  video,
+  canvas,
+  audio,
+  iframe,
+  embed,
+  object {
+    display: block;
+    vertical-align: middle;
+  }
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+  [hidden]:where(:not([hidden="until-found"])) {
+    display: none;
+  }
+} */
+
+
+/* FONTS ------------------------------------------------------------------- */
+
+
+@font-face { font-family: 'Rooney'; font-weight: 200; font-style: normal; font-display: swap; src: url(/assets/fonts/rooney/light.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney'; font-weight: 200; font-style: italic; font-display: swap; src: url(/assets/fonts/rooney/light-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney'; font-weight: 400; font-style: normal; font-display: swap; src: url(/assets/fonts/rooney/regular.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney'; font-weight: 400; font-style: italic; font-display: swap; src: url(/assets/fonts/rooney/regular-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney'; font-weight: 500; font-style: normal; font-display: swap; src: url(/assets/fonts/rooney/medium.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney'; font-weight: 500; font-style: italic; font-display: swap; src: url(/assets/fonts/rooney/medium-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney'; font-weight: 700; font-style: normal; font-display: swap; src: url(/assets/fonts/rooney/bold.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney'; font-weight: 700; font-style: italic; font-display: swap; src: url(/assets/fonts/rooney/bold-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney'; font-weight: 800; font-style: normal; font-display: swap; src: url(/assets/fonts/rooney/heavy.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney'; font-weight: 800; font-style: italic; font-display: swap; src: url(/assets/fonts/rooney/heavy-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney'; font-weight: 900; font-style: normal; font-display: swap; src: url(/assets/fonts/rooney/black.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney'; font-weight: 900; font-style: italic; font-display: swap; src: url(/assets/fonts/rooney/black-italic.woff2) format('woff2'); }
+@font-face { font-family: "_Rooney"; src: local("Georgia"); size-adjust: 99.0%; }
+
+@font-face { font-family: 'Rooney Sans'; font-weight: 200; font-style: normal; font-display: swap; src: url(/assets/fonts/rooney/sans/light.woff2) format('woff2');}
+@font-face { font-family: 'Rooney Sans'; font-weight: 200; font-style: italic; font-display: swap; src: url(/assets/fonts/rooney/sans/light-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney Sans'; font-weight: 400; font-style: normal; font-display: swap; src: url(/assets/fonts/rooney/sans/regular.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney Sans'; font-weight: 400; font-style: italic; font-display: swap; src: url(/assets/fonts/rooney/sans/regular-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney Sans'; font-weight: 500; font-style: normal; font-display: swap; src: url(/assets/fonts/rooney/sans/medium.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney Sans'; font-weight: 500; font-style: italic; font-display: swap; src: url(/assets/fonts/rooney/sans/medium-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney Sans'; font-weight: 700; font-style: normal; font-display: swap; src: url(/assets/fonts/rooney/sans/bold.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney Sans'; font-weight: 700; font-style: italic; font-display: swap; src: url(/assets/fonts/rooney/sans/bold-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney Sans'; font-weight: 800; font-style: normal; font-display: swap; src: url(/assets/fonts/rooney/sans/heavy.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney Sans'; font-weight: 800; font-style: italic; font-display: swap; src: url(/assets/fonts/rooney/sans/heavy-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney Sans'; font-weight: 900; font-style: normal; font-display: swap; src: url(/assets/fonts/rooney/sans/black.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney Sans'; font-weight: 900; font-style: italic; font-display: swap; src: url(/assets/fonts/rooney/sans/black-italic.woff2) format('woff2'); }
+@font-face { font-family: "_Rooney Sans"; src: local("Arial"); size-adjust: 93.5%; }
+
+
+/* VARIABLES --------------------------------------------------------------- */
+
+
+:root { 
+  
+  /* -- var-colors --------------------------------------------------------- */
+  
+  --color-background: #fffdf8;
+  --color-foreground: #333333;
+  --color-accent: #eb6345;
+  --color-mark: #fff01b;
+  --color-strike: #e4008a;
+  --color-active: #ad4f1f;
+  --color-link: #5b5bf4;
+  --color-hover: #f36f2d;
+  --color-visited: #4c4cc9;
+  --color-shade: #000000;
+  --color-shadow: rgb(from var(--color-shade) r g b / 0.25);
+  --color-overlay: rgb(from var(--color-shade) r g b / 0.10);
+
+  /* -- var-fonts ---------------------------------------------------------- */
+  
+  --font-sans: 'Rooney Sans', '_Rooney Sans', 'Arial', sans-serif;
+  --font-serif: 'Rooney', '_Rooney', 'Georgia', serif;
+  --font-cursive: 'Monologue', '_Monologue', 'Comic Sans MS', 'Comic Sans', cursive;
+  --font-monotype: 'Dossier', '_Dossier', 'Courier New', monospace;
+  --font-header: 'Bogart Alt', '_Bogart Alt', 'Rooney', '_Rooney', 'Georgia', serif;
+
+  /* -- var-sizes ---------------------------------------------------------- */
+  
+  --max-width: 44rem;
+  --spacing: 1rem;
+
+}
+
+@media (min-width: 28.5rem) {
+  :root {
+    --spacing: 2rem;
+  }
+}
+
+
+/* ELEMENTS ---------------------------------------------------------------- */
+
+
+/* -- a -------------------------------------------------------------------- */
+
+a,
+a:link {
+  cursor: pointer;
+  color: var(--color-link);
+  fill: var(--color-link);
+  text-decoration: none;
+}
+a:visited {
+  color: var(--color-visited);
+  fill: var(--color-visited);
+}
+@media (hover: hover) {
+  a:hover,
+  a:focus  {
+    color: var(--color-hover);
+    fill: var(--color-hover);
+  }
+  a:active {
+    color: var(--color-active);
+    fill: var(--color-active);
+  }
+}
+
+/* -- article -------------------------------------------------------------- */
+
+article {
+
+}
+
+/* -- aside ---------------------------------------------------------------- */
+
+aside {
+
+}
+
+/* -- blockquote ----------------------------------------------------------- */
+
+blockquote {
+  border-left: 2px solid black;
+  margin: 2rem 0 2rem 0;
+  padding: 0 0 0 2rem;
+}
+blockquote p {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+blockquote cite {
+  
+}
+
+/* -- body ----------------------------------------------------------------- */
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 400; 
+  margin: 0 auto;
+  max-width: var(--max-width);
+  padding: 0 var(--spacing);;
+  position: relative;
+}
+
+@media (min-width: 60rem) {
+  
+  body:has(.spread) {
+    
+    --max-width: 84rem;
+    
+  }
+  
+}
+
+/* -- b, strong ------------------------------------------------------------ */
+
+b,
+strong, {
+  font-weight: 700;
+}
+
+/* -- cite ----------------------------------------------------------------- */
+
+cite {
+
+}
+
+/* -- i, em ---------------------------------------------------------------- */
+
+i, 
+em {
+  font-style: italic;
+}
+
+/* -- figure --------------------------------------------------------------- */
+
+figure {
+  margin: 2rem 0 2rem 0;
+}
+
+figcaption {
+  font-size: 1rem;
+  font-style: italic;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/* -- form ----------------------------------------------------------------- */
+
+form {
+  font-family: var(--font-sans);
+}
+
+/* -- h{n} ----------------------------------------------------------------- */
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+h2 {
+  font-size: 2.0rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-header);
+  line-height: 100%;
+  margin: 3rem 0 0.5rem 0;
+}
+
+/* -- hr ------------------------------------------------------------------- */
+
+hr {
+  width: 100%;
+  height: auto;
+}
+
+/* -- img ------------------------------------------------------------------ */
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* -- li ------------------------------------------------------------------- */
+
+li {
+
+}
+
+/* -- mark ----------------------------------------------------------------- */
+
+mark {
+  color: var(--color-foreground);
+  background-color: var(--color-mark);
+}
+
+/* -- menu ----------------------------------------------------------------- */
+
+menu {
+
+}
+
+/* -- ol ------------------------------------------------------------------- */
+
+ol {
+  list-style: outside;
+  margin: 2rem 0 2rem 2rem;
+}
+
+/* -- p -------------------------------------------------------------------- */
+
+p {
+  
+}
+
+/* -- picture -------------------------------------------------------------- */
+
+picture {
+  
+}
+
+/* -- q -------------------------------------------------------------------- */
+
+q {
+  
+}
+
+/* -- s -------------------------------------------------------------------- */
+
+s {
+  
+}
+
+/* -- section -------------------------------------------------------------- */
+
+section {
+  overflow-y: clip;
+  margin: 2rem 0 3rem 0;
+  padding: 2rem 0 2rem 0;
+}
+
+section > :first-child:is(h1, h2, h3, h4, h5, h6) {
+  margin-top: 1rem;
+}
+
+/* -- small ---------------------------------------------------------------- */
+
+small {
+  
+}
+
+/* -- svg ------------------------------------------------------------------ */
+
+svg {
+  
+}
+
+/* -- u -------------------------------------------------------------------- */
+
+u {
+  
+}
+
+/* -- ul ------------------------------------------------------------------- */
+
+ul {
+
+}
+
+/* MODIFIERS --------------------------------------------------------------- */
+
+
+/* -- .animate-{n} --------------------------------------------------------- */
+
+.animate {}
+
+/* -- .bleed --------------------------------------------------------------- */
+
+.bleed {
+  position: relative;
+}
+
+.bleed:after {
+  background-color: color-mix(in srgb, var(--color-accent) 15%, var(--color-background));
+  content: " ";
+  display: block;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  position: absolute; 
+  height: 100%;
+  top: 0; left: 50%; right: 50%; width: 100vw;
+  z-index: -1;
+}
+
+/* -- .blend-mode-{n} ------------------------------------------------------ */
+
+.blend-mode {}
+
+/* -- .draft --------------------------------------------------------------- */
+
+.draft {}
+
+/* -- .drop-cap ------------------------------------------------------------ */
+
+.drop-cap > p:first-of-type::first-letter  {
+  float: left;
+  font-size: 300%;
+  line-height: 100%;
+  padding-right: 0.25rem;
+}
+
+/* -- .capitalize ---------------------------------------------------------- */
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* -- .cursive ------------------------------------------------------------- */
+
+.cursive {
+  font-family: var(--font-cursive);
+}
+
+/* -- .contents ------------------------------------------------------------ */
+
+.contents {
+  
+}
+.contents li {
+  padding: 0.25rem;
+  position: relative;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-foreground) 10%, var(--color-background));
+}
+.contents li:first-of-type {
+  border-top: 1px solid color-mix(in srgb, var(--color-foreground) 10%, var(--color-background));
+}
+.contents a {
+  color: var(--color-foreground);
+  display: block;
+  line-height: 1.2;
+  margin: 0 -0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+}
+.contents a span {
+  display: block;
+  font-size: 1.0rem;
+  font-style: italic;
+  font-weight: 400;
+  padding: 0.25rem 0;
+}
+
+@media (min-width: 28.5rem) {
+  .contents a {
+    margin: 0 -1rem;
+    padding: 0.5rem 1.0rem;
+  }
+}
+
+@media (hover: hover) {
+  
+  .contents a:hover,
+  .contents a:focus {
+    background-color: color-mix(in srgb, var(--color-hover) 10%, var(--color-background));
+    color: var(--color-hover);
+  }
+  .contents a:active {
+    color: var(--color-active);
+  }
+  .contents .index a,
+  .contents .index a:hover,
+  .contents .index a:focus,
+  .contents .index a:active  {
+    color: color-mix(in srgb, var(--color-foreground) 50%, var(--color-background));
+  }
+}
+
+.contents .index a {
+  background: color-mix(in srgb, var(--color-foreground) 7.5%, var(--color-background));
+  cursor: default;
+}
+
+/* -- .first-line-ident ---------------------------------------------------- */
+
+.first-line-indent > p:not(:first-of-type) {
+  text-indent: 2rem;
+}
+.first-line-indent > :is(h1, h2, h3, h4, h5, h6) + p:not(:first-of-type) {
+  text-indent: 0;
+}
+
+/* -- .folio --------------------------------------------------------------- */
+
+.folio {
+  margin: 2rem 0 1rem 0;
+}
+
+/* -- .hyphenation --------------------------------------------------------- */
+
+.hyphenation {
+  hyphens: auto;
+}
+
+/* -- .icon-{n} ------------------------------------------------------------ */
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+  margin: 0.375rem;
+}
+
+/* -- @keyframes ----------------------------------------------------------- */
+
+@keyframes slide-in {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* -- .lowercase ----------------------------------------------------------- */
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+/* -- .marginalia ---------------------------------------------------------- */
+
+.marginalia {
+  
+}
+
+/* -- .monotype ------------------------------------------------------------ */
+
+.monotype {
+  font-family: var(--font-monotype);
+  line-height: 1.25;
+}
+
+/* -- .pages --------------------------------------------------------------- */
+
+.pages {
+  align-items: center;
+  display: flex;
+  font-family: var(--font-sans);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.pages a,
+.pages li,
+.pages span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+
+.pages li {
+  display: flex;
+  flex: 1;
+}
+
+.pages li:has(a[rel=prev]) {
+  margin-left: -0.5rem;
+}
+
+.pages li:has(a[rel=next]) {
+  justify-content: flex-end;
+  margin-right: -0.5rem;
+}
+
+.pages a {
+  align-items: center;
+  display: flex;
+}
+
+.pages a[rel=prev] {
+  flex-direction: row-reverse;
+  margin-left: -0.5rem;
+  padding-right: 1rem;
+}
+
+.pages a[rel=next] {
+  margin-left: -0.5rem;
+  padding-left: 1rem;
+}
+
+.pages svg {
+  flex-shrink: 0;
+}
+
+/* -- .panels -------------------------------------------------------------- */
+
+.panels {
+  grid-column-gap: 2vw;
+  grid-row-gap: 2vw;
+}
+
+.panels > * {
+  display: block;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+.panels figcaption {
+  grid-column: 1/-1;
+}
+
+.panels {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.panels > :is(img, picture, svg):last-of-type:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
+.panels:has(> :last-child:nth-child(4)) {
+
+}
+
+@media (min-width: 28.5rem) {
+  
+  .panels {
+    grid-column-gap: 0.75rem;
+    grid-row-gap: 0.75rem;
+  }
+  
+}
+
+@media (min-width: 60rem) {
+  
+  .spread .panels:has(> :is(img, picture, svg):last-of-type:nth-child(3)){
+    grid-template-columns: repeat(3, 1fr);
+    grid-column: auto;
+  }
+  
+  .spread .panels > :is(img, picture, svg):last-of-type:nth-child(3) {
+    grid-column: auto;
+  }
+  
+  .spread .panels:has(> :is(img, picture, svg):last-of-type:nth-child(4)){
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+  }
+  
+}
+
+/* -- .redacted ------------------------------------------------------------ */
+
+.redacted {
+  background-color: var(--color-foreground);
+  color: var(--color-foreground);
+  cursor: not-allowed;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* -- .sans ---------------------------------------------------------------- */
+
+.sans {
+  font-family: var(--font-sans);
+}
+
+/* -- .serif --------------------------------------------------------------- */
+
+.serif {
+  font-family: var(--font-serif);
+}
+
+/* -- .social -------------------------------------------------------------- */
+
+.social {
+  align-items: center;
+  display: flex;
+  margin-right: -0.625rem;
+  justify-content: flex-end;
+}
+.social li:first-of-type:not(:has(a)) {
+  flex: 1;
+  font-family: var(--font-sans);
+  overflow: hidden;
+}
+.social li:first-of-type:not(:has(a)) span {
+  display: inline-block; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.social  li {
+  display: flex;
+}
+.social a span {
+  position: absolute; top: -9999rem; left: -9999rem;
+}
+.social a,
+.social a:link {
+  color: var(--color-foreground);
+  fill: var(--color-foreground);
+}
+@media (hover: hover) {
+  .social a:hover,
+  .social a:focus  {
+    color: var(--color-hover);
+    fill: var(--color-hover);
+  }
+  .social a:active {
+    color: var(--color-active);
+    fill: var(--color-active);
+  }
+}
+
+/* -- .space-after-paragraph > p ------------------------------------------- */
+
+.space-after-paragraph > p {
+  margin-bottom: 1rem;
+}
+
+/* -- .spill  -------------------------------------------------------------- */
+
+.spill {
+  margin: auto calc(var(--spacing) * -0.75);
+}
+
+/* -- .spoiler-{n} --------------------------------------------------------- */
+
+.spoiler {
+  background-color: transparent;
+  cursor: help;
+  filter: blur(0.25rem);
+}
+
+.spoiled-revealed {
+  background-color: transparent;
+  filter: none;
+}
+
+/* -- .spread  ------------------------------------------------------------- */
+
+.spread { /* see body above */ }
+
+/* -- .text-align-{n} ------------------------------------------------------ */
+
+.text-align-center {
+  text-align: center;
+}
+.text-align-left {
+  text-align: left;
+}
+.text-align-right {
+  text-align: right;
+}
+.text-align-justify {
+  text-align: justify;
+}
+
+/* -- .transition-{n} ------------------------------------------------------ */
+
+.transition {}
+.transition-rise {}
+.transition-fall {}
+.transition-fade-in {}
+.transition-fade-out {}
+.transition-pop {}
+.transition-slide-in-left {}
+.transition-slide-in-right {}
+.transition-slide-out-left {}
+.transition-slide-out-right {}
+
+/* -- .uppercase ----------------------------------------------------------- */
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* -- .verse --------------------------------------------------------------- */
+
+.verse {
+  
+}
+
+
+/* EOF --------------------------------------------------------------------- */
+
+
+.attachment {}
+.bookmark {}
+.chat {}
+.character {}
+.description {}
+.dialogue {}
+.message {}
+.note {}
+.notes {}
+.page {}
+.scene {}
+.script {}
+.social {
+  
+}
+

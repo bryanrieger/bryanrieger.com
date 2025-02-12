@@ -1,0 +1,11 @@
+---
+layout: false
+permalink: /robots.txt
+eleventyExcludeFromCollections: true
+---
+{%- for user_agent in site.robots_txt.disallow %}
+User-agent: {{ user_agent }}
+{%- endfor %}
+Disallow: /
+
+sitemap: https://{{ site.domain }}{{ site.sitemap }}

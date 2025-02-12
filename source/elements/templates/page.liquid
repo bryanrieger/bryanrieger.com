@@ -1,0 +1,26 @@
+<!doctype {{ site.doctype }}>
+<html lang="{{ site.lang }}" prefix="{{ site.prefix }}">
+    <head>
+        <title>{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}</title>
+        {% include "head/meta" %}
+        {% include "head/link.liquid" %}
+        {% include "head/schema.liquid" %}
+        <script async defer src="/assets/scripts/default.js"></script>
+        <style>
+            {%- include "assets/styles.css" -%}
+            {%- getBundle "css" -%}
+        </style>
+    </head>
+    <body>
+        {% include "page/header.liquid" %}
+        {% include "page/nav.liquid" %}
+        <main>
+            {{ content }}
+        </main>
+        {% include "page/footer.liquid" %}
+        {% include "page/svg.liquid" %}
+        <script>
+            {% getBundle "js" %}
+        </script>
+    </body>
+</html>

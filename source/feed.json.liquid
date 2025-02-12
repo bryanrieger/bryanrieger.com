@@ -1,0 +1,33 @@
+---
+layout: false
+permalink: /feed.json
+eleventyExcludeFromCollections: true
+---
+{
+    "version": "https://jsonfeed.org/version/1",
+    "home_page_url": "https://{{ site.domain }}",
+    "feed_url": "https://{{ site.domain }}/updates.json",
+    "icon": "https://{{ site.domain }}/assets/icons/icon.png",
+    "favicon": "https://{{ site.domain }}/assets/icons/favicon.png",
+    "language": "{{ site.lang }}",
+    "title": "{{ site.title }}",
+    "description": "{{ site.description }}",
+    "authors": [
+        {
+          "name": "{{ site.author.name }}",
+          "url": "https://{{ site.domain }}",
+          "avatar": "https://{{ site.domain }}/assets/images/avatar-512x512.png"
+        }
+    ],
+    "items": [
+      {%- for post in collections.all | reverse %}
+        {
+            "id": "{{ site.domain }}{{ post.url }}",
+            "url": "https://{{ site.domain }}{{ post.url }}",
+            "title": "{{ post.data.title }}",
+            "summary": "{{ post.data.description }}",
+            "date_published": "{{ post.date | dateToRfc3339 }}"
+        }
+        {%- endfor %}
+    ]
+}
