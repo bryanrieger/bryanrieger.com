@@ -7,7 +7,7 @@
         {% include "head/schema" %}
         {% include "head/scripts" %}
         <style>
-            {%- include "assets/styles.css" -%}
+            {%- include "assets/critical.css" -%}
             {%- getBundle "css" -%}
         </style>
     </head>
@@ -20,7 +20,7 @@
         {% include "page/footer" %}
         {% include "page/svg" %}
         <script>
-            {%- include "assets/scripts.js" -%}
+            {%- include "assets/critical.js" -%}
             {% getBundle "js" %}
         </script>
     </body>
