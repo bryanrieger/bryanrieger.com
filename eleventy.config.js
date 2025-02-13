@@ -27,7 +27,7 @@ export default async function(eleventyConfig) {
   		return DateTime.fromJSDate(dateObj, { zone: "utc" }).setLocale('en').toLocaleString(DateTime.DATE_MED);
 	});
 	
-	eleventyConfig.addGlobalData('header', 'true');
+	eleventyConfig.addGlobalData('header', 'true'); //?
 	eleventyConfig.addGlobalData('layout', 'page');
 	eleventyConfig.addGlobalData("permalink", () => { 
 		return (data) => `${data.page.filePathStem}.${data.page.outputFileExtension}`;
@@ -35,7 +35,7 @@ export default async function(eleventyConfig) {
 	
 	eleventyConfig.addLiquidFilter("dateToRfc822", feedPlugin.dateToRfc822);
 	eleventyConfig.addLiquidFilter("dateToRfc3339", feedPlugin.dateToRfc3339);
-	eleventyConfig.setLiquidOptions({  dynamicPartials: true });
+	eleventyConfig.setLiquidOptions({ dynamicPartials: true });
 	
 	eleventyConfig.addPassthroughCopy('source/_headers');
 	eleventyConfig.addPassthroughCopy('source/_redirects');

@@ -1,24 +1,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,viewport-fit=cover">
-<meta name="generator" content="Handmade with ❤️ in Montréal, Canada.">
-<meta name="referrer" content="no-referrer-when-downgrade">
-<meta name="robots" content="all">
-<meta name="rating" content="General">
-<meta name="author" content="Bryan Rieger">
-<meta name="copyright" content="Copyright Bryan Rieger. All rights reserved.">
+<meta name="generator" content="{{ site.generator }}">
+<meta name="referrer" content="{{ site.referrer }}">
+<meta name="robots" content="{{ site.robots }}">
+<meta name="rating" content="{{ site.rating }}">
+<meta name="author" content="{{ site.author.name }}">
+<meta name="copyright" content="{{ site.copyright }}">
 <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
 <meta name="keywords" content="{{ site.keywords }}, {{ keywords }}">
 <meta name="theme-color" content="{% if theme %}{{ theme }}{% else %}{{ site.color.theme }}{% endif %}">
-<meta name="color-scheme" content="only light" />
+<meta name="color-scheme" content="{{ site.color.scheme }}" >
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@bryanrieger">
+<meta name="twitter:site" content="@{{ social.twitter.handle }}">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Bryan Rieger">
-<meta property="og:title" content="{{ title }}">
-<meta property="og:image" content="https://bryanrieger.com/{{ image }}">
-<meta property="og:image:alt" content="{{ image.alt }}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="og:image" content="https://{{ site.domain }}{% if image %}{{ image }}{% else %}{{ site.image }}{% endif %}">
+<meta property="og:image:alt" content="{% if alt %}{{ alt }}{% else %}{{ site.image.alt }}{% endif %}">
 <meta property="og:image:width" content="1080">
 <meta property="og:image:height" content="1080">
 <meta property="og:image:type" content="image/png">
-<meta property="og:description" content="{{ description }}">
-<meta property="og:url" content="https://bryanrieger.com/{{ url }}">
+<meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+<meta property="og:url" content="https://{{ site.domain }}/{{ url }}">

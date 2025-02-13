@@ -7,6 +7,7 @@
   ::before, ::after { --content: ''; }
   html, :host { line-height: 1.5; -webkit-text-size-adjust: 100%; -moz-tab-size: 4; tab-size: 4; font-family: 'Arial', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-feature-settings: normal; font-variation-settings: normal; -webkit-tap-highlight-color: transparent; }
   body { margin: 0; line-height: inherit; }
+  button, [role="button"] { cursor: pointer; }
   hr { height: 0; color: inherit; }
   h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; }
   a { color: inherit; text-decoration: inherit; }
@@ -14,7 +15,6 @@
   pre { font-size: 1em; }
   blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre { margin: 0; }
   ol, ul { list-style: none; margin: 0; padding: 0; }
-  [role="button"] { cursor: pointer; }
   img, svg, video, canvas, audio, object { display: block; vertical-align: middle; }
   img, video { max-width: 100%; height: auto; }
 }
@@ -39,7 +39,7 @@
   
     /* -- var-colors ------------------------------------------------------- */
     
-    --color-background: #fffdf8;
+    --color-background: #ffffff;
     --color-foreground: #333333;
     --color-accent: #eb6345;
     --color-mark: #fff01b;
@@ -56,9 +56,6 @@
     
     --font-sans: 'Rooney Sans', '_Rooney Sans', 'Arial', sans-serif;
     --font-serif: 'Rooney', '_Rooney', 'Georgia', serif;
-    --font-cursive: 'Monologue', '_Monologue', 'Comic Sans MS', 'Comic Sans', cursive;
-    --font-monotype: 'Dossier', '_Dossier', 'Courier New', monospace;
-    --font-header: 'Bogart Alt', '_Bogart Alt', 'Rooney', '_Rooney', 'Georgia', serif;
   
     /* -- var-sizes ---------------------------------------------------------- */
     
@@ -91,11 +88,12 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-serif);
+    font-optical-sizing: auto;
     font-size: 1.125rem;
     font-weight: 400; 
     margin: 0 auto;
     max-width: var(--max-width);
-    padding: 0 var(--spacing);;
+    padding: 0 var(--spacing);
     position: relative;
   }
   
@@ -231,12 +229,11 @@
     fill: var(--color-foreground);
   }
   
-  
   body > header h1 {
     align-items: center;
     display:flex;
     flex: 1;
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-size: 1.25rem;
     font-weight: 400;
     height: 100%;
@@ -262,6 +259,7 @@
   body > header label {
     cursor: pointer;
     margin-right: -0.5rem;
+    padding: 0;
     z-index: 3;
   }
   

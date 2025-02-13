@@ -1,0 +1,5 @@
+@font-face { font-family: 'Monologue'; font-weight: 400; size-adjust: 85.0%; font-style: normal; font-display: swap; src: url(/assets/fonts/monologue/regular.woff2) format('woff2'); }
+@font-face { font-family: 'Monologue'; font-weight: 400; size-adjust: 85.0%; font-style: italic; font-display: swap; src: url(/assets/fonts/monologue/regular-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Monologue'; font-weight: 700; size-adjust: 85.0%; font-style: normal; font-display: swap; src: url(/assets/fonts/monologue/bold.woff2) format('woff2'); }
+@font-face { font-family: 'Monologue'; font-weight: 700; size-adjust: 85.0%; font-style: italic; font-display: swap; src: url(/assets/fonts/monologue/bold-italic.woff2) format('woff2'); }
+@font-face { font-family: "_Monologue"; src: local("Comic Sans MS"); size-adjust: 99.0%; }

@@ -1,25 +1,26 @@
-<!doctype {{ site.doctype }}>
-<html lang="{{ site.lang }}" prefix="{{ site.prefix }}">
+<!doctype html>
+<html lang="{{ site.lang }}" prefix="og: http://ogp.me/ns#">
     <head>
         <title>{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}</title>
         {% include "head/meta" %}
-        {% include "head/link.liquid" %}
-        {% include "head/schema.liquid" %}
-        <script async defer src="/assets/scripts/default.js"></script>
+        {% include "head/link" %}
+        {% include "head/schema" %}
+        {% include "head/scripts" %}
         <style>
             {%- include "assets/styles.css" -%}
             {%- getBundle "css" -%}
         </style>
     </head>
     <body>
-        {% include "page/header.liquid" %}
-        {% include "page/nav.liquid" %}
+        {% include "page/header" %}
+        {% include "page/nav" %}
         <main>
             {{ content }}
         </main>
-        {% include "page/footer.liquid" %}
-        {% include "page/svg.liquid" %}
+        {% include "page/footer" %}
+        {% include "page/svg" %}
         <script>
+            {%- include "assets/scripts.js" -%}
             {% getBundle "js" %}
         </script>
     </body>

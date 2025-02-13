@@ -7,3 +7,4 @@
 @font-face { font-family: 'Bogart Alt'; font-weight: 700; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/alt/bold.woff2) format('woff2'); }
 @font-face { font-family: 'Bogart Alt'; font-weight: 800; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/alt/extrabold.woff2) format('woff2'); }
 @font-face { font-family: 'Bogart Alt'; font-weight: 900; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/alt/black.woff2) format('woff2'); }
+@font-face { font-family: "_Bogart"; src: local("Georgia"); size-adjust: 100.0%; }

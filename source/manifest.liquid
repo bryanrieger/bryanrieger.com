@@ -4,22 +4,22 @@ permalink: /manifest.json
 eleventyExcludeFromCollections: true
 ---
 {
-  "id": "{{ site.manifest.id }}",
-  "scope": "{{ site.manifest.scope }}",
-  "start_url": "{{ site.manifest.start_url }}",
-  "name": "{{ site.manifest.title }}",
-  "short_name": "{{ site.manifest.short_name }}",
-  "display": "{{ site.manifest.display }}",
+  "id": "{{ manifest.id }}",
+  "scope": "{{ manifest.scope }}",
+  "start_url": "{{ manifest.start_url }}",
+  "name": "{{ manifest.title }}",
+  "short_name": "{{ manifest.short_name }}",
+  "display": "{{ manifest.display }}",
   "theme_color": "{{ site.color.theme }}",
   "background_color": "{{ site.color.background }}",
   "description": "{{ site.description }}",
   "icons": [
-  {%- for icon in site.manifest.iconset %}
+  {%- for icon in manifest.iconset %}
 	{ {%- for prop in icon -%} "{{ prop[0] }}": "{{ prop[1] }}"{% if forloop.last != true %}, {% endif %}{%- endfor %} }{% if forloop.last != true %}, {% endif %}
   {%- endfor %}
   ],
   "screenshots" : [
-  {%- for screenshot in site.manifest.screenshots %}
+  {%- for screenshot in manifest.screenshots %}
 	{ {%- for prop in screenshot -%} "{{ prop[0] }}": "{{ prop[1] }}"{% if forloop.last != true %}, {% endif %}{%- endfor %} }{% if forloop.last != true %}, {% endif %}
   {%- endfor %}
   ]

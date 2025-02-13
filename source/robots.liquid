@@ -8,7 +8,7 @@ Disallow: /api/
 Disallow: /thank-you$
 Allow: /
 
-{%- for user_agent in site.robots.disallow %}
+{%- for user_agent in robots.disallow %}
 User-agent: {{ user_agent }}
 {%- endfor %}
 Disallow: /

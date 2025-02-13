@@ -1,5 +1,35 @@
 ---
 eleventyExcludeFromCollections: true
+logo: logo
+theme: ffffff
+title: About
+description: whatever
+keywords: testing, whatever, this, that, and the other
+image: /assets/images/meta/generic.png
+alt: this is what's in the image
 ---
 <h1>Thank you</h1>
-<p>Your message has been sent.</p>
+
+<section id="send">
+    <p>Your email message has been sent.</p>
+</section>
+
+<section id="subscribe">
+    <p>Your have been subscribe to my newsletter.</p>
+</section>
+
+<section id="confirmation">
+    <p>Your subscription has been confirmed.</p>
+</section>
+
+<section>
+    <p>For being fabulous!</p>
+</section>
+
+<!-- Bundles -------------------------------------------------------------- -->
+
+<!-- Append additional styles to the <style> tag in the <head>. ----------- -->
+{%- css %}
+section { display:none; }
+section:target, :root:not(:has(:target)) section:last-of-type { display: block; }
+{%- endcss %}

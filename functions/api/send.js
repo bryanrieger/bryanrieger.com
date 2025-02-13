@@ -15,7 +15,7 @@ const submitForm = async (context) => {
     }
   }
 
-  if (data["honeypot"] != "on" && data["action"] == "send") {
+  if (data["spambot"] != "on" && data["action"] == "send") {
     if (data["name"] != "" && data["email"] != "" & data["message"] != "") {
       let body = "";
       const message = await resend.emails.send({
@@ -27,7 +27,7 @@ const submitForm = async (context) => {
     }
   }
 
-  return Response.redirect("https://bryanrieger.com/thank-you", 303);
+  return Response.redirect("https://bryanrieger.com/thank-you#send", 303);
 }
 
 export const onRequest = [submitForm];

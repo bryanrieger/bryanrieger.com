@@ -1,0 +1,36 @@
+---
+eleventyExcludeFromCollections: true
+title: Notes
+pagination:
+  data: collections.note
+  size: 2
+  alias: notes
+permalink: "/notes/{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber }}{% else %}index{% endif %}.html"
+---
+<header>
+  <h1>{{title}}</h1>
+</header>
+
+<ol>
+  {%- for note in notes reversed -%}
+    <li>{% include "note" %}</li>
+  {%- endfor -%}
+</ol>
+
+<nav>
+  <ol class="pages">
+    {% if pagination.href.previous %}
+    <li><a rel="prev" href="{{pagination.href.previous}}">Back<svg class="icon" viewBox="0 0 32 32" width="32" height="32"><use href="#back.icon" /></svg></a></li>
+    {% endif %}
+    {% if pagination.href.next %}
+    <li><a rel="next" href="{{pagination.href.next}}">Next<svg class="icon" viewBox="0 0 32 32" width="32" height="32"><use href="#next.icon" /></svg></a></li>
+    {% endif %}
+  </ol>
+</nav>
+
+<!-- Bundles -------------------------------------------------------------- -->
+
+{%- svg -%}
+<path id="back.icon" d="M19.298 7.288a1 1 0 0 1 1.404 1.424l-7.288 7.19 7.298 7.396a1 1 0 0 1-1.424 1.404l-8-8.107a1 1 0 0 1 .01-1.414l8-7.893Z"/>
+<path id="next.icon" d="M11.298 8.712a1 1 0 0 1 1.404-1.424l8 7.893a1 1 0 0 1 .01 1.414l-8 8.107a1 1 0 0 1-1.424-1.404l7.298-7.396-7.288-7.19Z"/>
+{%- endsvg -%}

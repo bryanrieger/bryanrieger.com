@@ -1,4 +1,5 @@
-@font-face { font-family: 'Duper'; font-weight: 400; font-style: normal; font-display: swap; src: url(/assets/fonts/duper/regular.woff2) format('woff2'); }
-@font-face { font-family: 'Duper'; font-weight: 400; font-style: normal; font-display: swap; src: url(/assets/fonts/duper/regular-italic.woff2) format('woff2'); }
-@font-face { font-family: 'Duper'; font-weight: 700; font-style: normal; font-display: swap; src: url(/assets/fonts/duper/bold.woff2) format('woff2'); }
-@font-face { font-family: 'Duper'; font-weight: 700; font-style: normal; font-display: swap; src: url(/assets/fonts/duper/bold-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Duper'; font-weight: 400; font-style: normal; size-adjust: 113.5%; font-display: swap; src: url(/assets/fonts/duper/regular.woff2) format('woff2'); }
+@font-face { font-family: 'Duper'; font-weight: 400; font-style: normal; size-adjust: 113.5%; font-display: swap; src: url(/assets/fonts/duper/regular-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Duper'; font-weight: 700; font-style: normal; size-adjust: 113.5%; font-display: swap; src: url(/assets/fonts/duper/bold.woff2) format('woff2'); }
+@font-face { font-family: 'Duper'; font-weight: 700; font-style: normal; size-adjust: 113.5%; font-display: swap; src: url(/assets/fonts/duper/bold-italic.woff2) format('woff2'); }
+@font-face { font-family: "_Duper"; src: local("Comic Sans MS"); size-adjust: 95.0%; }

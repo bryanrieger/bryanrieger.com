@@ -1,0 +1,28 @@
+---
+layout: false
+permalink: /humans.txt
+eleventyExcludeFromCollections: true
+---
+/* -- AUTHOR ------------------------- */
+
+Author: {{ site.author.name }}
+Contact: {{ site.author.email }}
+Bluesky: {{ site.author.social }}
+Location: {{ site.author.location.city }}, {{ site.author.location.country }}
+
+/* -- EDITOR (THANK YOU!) ------------ */	
+
+Editor: {{ site.editor.name }}
+Contact: {{ site.editor.email }}
+Bluesky: {{ site.editor.social }}
+Location: {{ site.editor.location.city }}, {{ site.editor.location.country }}
+
+/* -- SITE --------------------------- */
+
+Last updated: {% now %}
+Doctype: html
+Language: {{ site.language }}
+{%- for tools in site.tools %}
+{{ tools[0]  | capitalize }}: {{ tools[1] }}
+{%- endfor %}
+

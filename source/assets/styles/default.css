@@ -205,6 +205,22 @@
 
 /* FONTS ------------------------------------------------------------------- */
 
+@font-face { font-family: 'Bogart Alt'; font-weight: 100; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/alt/thin.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart Alt'; font-weight: 200; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/alt/extralight.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart Alt'; font-weight: 300; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/alt/light.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart Alt'; font-weight: 400; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/alt/regular.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart Alt'; font-weight: 500; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/alt/medium.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart Alt'; font-weight: 600; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/alt/semibold.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart Alt'; font-weight: 700; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/alt/bold.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart Alt'; font-weight: 800; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/alt/extrabold.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart Alt'; font-weight: 900; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/alt/black.woff2) format('woff2'); }
+@font-face { font-family: "_Bogart Alt"; src: local("Georgia"); size-adjust: 100.0%; }
+
+@font-face { font-family: 'Duper'; font-weight: 400; font-style: normal; size-adjust: 113.5%; font-display: swap; src: url(/assets/fonts/duper/regular.woff2) format('woff2'); }
+@font-face { font-family: 'Duper'; font-weight: 400; font-style: normal; size-adjust: 113.5%; font-display: swap; src: url(/assets/fonts/duper/regular-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Duper'; font-weight: 700; font-style: normal; size-adjust: 113.5%; font-display: swap; src: url(/assets/fonts/duper/bold.woff2) format('woff2'); }
+@font-face { font-family: 'Duper'; font-weight: 700; font-style: normal; size-adjust: 113.5%; font-display: swap; src: url(/assets/fonts/duper/bold-italic.woff2) format('woff2'); }
+@font-face { font-family: "_Duper"; src: local("Comic Sans MS"); size-adjust: 95.0%; }
 
 @font-face { font-family: 'Rooney'; font-weight: 200; font-style: normal; font-display: swap; src: url(/assets/fonts/rooney/light.woff2) format('woff2'); }
 @font-face { font-family: 'Rooney'; font-weight: 200; font-style: italic; font-display: swap; src: url(/assets/fonts/rooney/light-italic.woff2) format('woff2'); }
@@ -234,6 +250,11 @@
 @font-face { font-family: 'Rooney Sans'; font-weight: 900; font-style: italic; font-display: swap; src: url(/assets/fonts/rooney/sans/black-italic.woff2) format('woff2'); }
 @font-face { font-family: "_Rooney Sans"; src: local("Arial"); size-adjust: 93.5%; }
 
+@font-face { font-family: 'Sequentialist'; font-weight: 400; font-style: normal; font-display: swap; src: url(/assets/fonts/sequentialist/regular.woff2) format('woff2'); }
+@font-face { font-family: 'Sequentialist'; font-weight: 400; font-style: italic; font-display: swap; src: url(/assets/fonts/sequentialist/regular-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Sequentialist'; font-weight: 700; font-style: normal; font-display: swap; src: url(/assets/fonts/sequentialist/bold.woff2) format('woff2'); }
+@font-face { font-family: 'Sequentialist'; font-weight: 700; font-style: italic; font-display: swap; src: url(/assets/fonts/sequentialist/bold-italic.woff2) format('woff2'); }
+@font-face { font-family: "_Sequentialist"; src: local("Comic Sans MS"); size-adjust: 99.0%; }
 
 /* VARIABLES --------------------------------------------------------------- */
 
@@ -317,6 +338,13 @@ aside {
 
 }
 
+/* -- b, strong ------------------------------------------------------------ */
+
+b,
+strong, {
+  font-weight: 700;
+}
+
 /* -- blockquote ----------------------------------------------------------- */
 
 blockquote {
@@ -357,11 +385,19 @@ body {
   
 }
 
-/* -- b, strong ------------------------------------------------------------ */
+/* -- button --------------------------------------------------------------- */
 
-b,
-strong, {
+button {
+  background-color: color-mix(in srgb, var(--color-background) 90%, var(--color-foreground));
+  border-radius: 1rem;
   font-weight: 700;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+button[type=submit] {
+  background-color: var(--color-accent);
+  color: var(--color-background);
 }
 
 /* -- cite ----------------------------------------------------------------- */
@@ -375,6 +411,13 @@ cite {
 i, 
 em {
   font-style: italic;
+}
+
+/* -- fieldset ------------------------------------------------------------- */
+
+fieldset {
+  margin: 0;
+  padding: 0;
 }
 
 /* -- figure --------------------------------------------------------------- */
@@ -439,10 +482,46 @@ img {
   height: auto;
 }
 
+/* -- input ---------------------------------------------------------------- */
+
+input {
+  background: none;
+  border: 0.0625rem solid color-mix(in srgb, var(--color-background) 80%, var(--color-foreground));
+  border-radius: 0.25rem;
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  font-weight: 400;
+  padding: 0.25rem 0.5rem 0.35rem 0.5rem;
+  outline: none;
+}
+input::placeholder {
+  color: color-mix(in srgb, var(--color-background) 80%, var(--color-foreground));
+}
+input:autofill {
+  background: none;
+  font-size: 1.125rem;
+  
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000000s ease-in-out 0s;
+}
+
 /* -- li ------------------------------------------------------------------- */
 
 li {
 
+}
+
+/* -- label ---------------------------------------------------------------- */
+
+label {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 600;
+  padding-left: 0.5em;
 }
 
 /* -- mark ----------------------------------------------------------------- */
@@ -511,6 +590,23 @@ small {
 
 svg {
   
+}
+
+/* -- textarea ------------------------------------------------------------- */
+
+textarea {
+  background: none;
+  border: 0.0625rem solid color-mix(in srgb, var(--color-background) 80%, var(--color-foreground));
+  border-radius: 0.25rem;
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  font-weight: 400;
+  padding: 0.25rem 0.5rem 0.35rem 0.5rem;
+  resize: none;
+}
+
+textarea::placeholder {
+  color: color-mix(in srgb, var(--color-background) 80%, var(--color-foreground));
 }
 
 /* -- u -------------------------------------------------------------------- */
