@@ -1,5 +1,5 @@
 const submitForm = async (context) => {
-  
+
     var input;
     try {
       input = await context.request.formData();
@@ -16,7 +16,7 @@ const submitForm = async (context) => {
         data[key] = [].concat(tmp, value);
       }
     }
-    let json = {};
+
     if (data["spambot"] != "on" && data["action"] == "subscribe") {
       if (data["email"] != "") {
         const options = {
@@ -32,14 +32,10 @@ const submitForm = async (context) => {
 
         try {
           const response = await fetch('https://api.buttondown.com/v1/subscribers', options);
-          if (!response.ok) {
-            data["action"] = "error";
-          }
-          json = await response.json();
+          if (!response.ok) { data["action"] = "error"; }
         } catch (error) {
           data["action"] = "error";
         }
-
       }
     }
 
