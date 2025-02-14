@@ -12,7 +12,7 @@ const submitForm = async (context) => {
         data[key] = [].concat(tmp, value);
       }
     }
-  
+    let json = {};
     if (data["spambot"] != "on" && data["action"] == "subscribe") {
       if (data["email"] != "") {
         const options = {
@@ -25,13 +25,20 @@ const submitForm = async (context) => {
           },
           body: JSON.stringify({ email_address: data["email"] })
         };
-        
-        fetch('https://api.buttondown.com/v1/subscribers', options)
-          .then(response => response.json())
-          .catch(err => data["action"] = "error" );
+
+        try {
+          const response = await fetch('https://api.buttondown.com/v1/subscribers', options);
+          if (!response.ok) {
+            data["action"] = "error";
+          }
+          json = await response.json();
+        } catch (error) {
+          data["action"] = "error";
+        }
+
       }
     }
-  
+
     return Response.redirect("https://bryanrieger.com/thank-you#" + data["action"], 303);
   }
   
