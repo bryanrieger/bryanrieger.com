@@ -97,7 +97,7 @@ export default async function(eleventyConfig) {
 		]
 	});
 	
-	eleventyConfig.setTemplateFormats([ "liquid", "html" ]);
+	eleventyConfig.setTemplateFormats([ "liquid", "html",  "svg", "webp", "jpg", "png", "apng", "avif",  "gif" ]);
 	eleventyConfig.setQuietMode(true);
 	return {
 		dir: {

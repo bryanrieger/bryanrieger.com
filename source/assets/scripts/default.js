@@ -97,31 +97,33 @@ if (spoilers) {
 
 /* elements ---------------------------------------------------------------- */
 
-const page = {
-	header: document.querySelector("body > header"),
-	nav: document.querySelector("body > nav")
-}
-const menu = {
-	input: {
-		switch: document.querySelector("body > header input[id=switch]"),
-	},
-	label: {
-		span: document.querySelector("body > header label[for=switch] span"),
-		svg: {
-			use: document.querySelector("body > header label[for=switch] svg use")
-		},
-		switch: document.querySelector("body > header label[for=switch]")
-	}
-}
 
-if (menu.input.switch) {
+// if (menu.input.switch) {
 	
-}
+// }
 
 
 /* ƒn() init --------------------------------------------------------------- */
 
 const init = () => { 
+	const page = {
+		header: document.querySelector("body > header"),
+		nav: document.querySelector("body > nav")
+	}
+	
+	const menu = {
+		input: {
+			switch: document.querySelector("body > header input[id=switch]"),
+		},
+		label: {
+			span: document.querySelector("body > header label[for=switch] span"),
+			svg: {
+				use: document.querySelector("body > header label[for=switch] svg use")
+			},
+			switch: document.querySelector("body > header label[for=switch]")
+		}
+	}
+
 	menu.label.text = menu.label.span.innerText;
 	menu.label.text_alt = menu.label.span.getAttribute("data-switch");
 	menu.label.svg.id = menu.label.svg.use.getAttribute("href")
