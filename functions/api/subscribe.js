@@ -19,8 +19,8 @@ const submitForm = async (context) => {
           method: 'POST',
           headers: {
             'X-Buttondown-Collision-Behavior': "overwrite",
-            accept: 'application/json',
-            authorization: 'Token ' + context.env.BUTTONDOWN_API_KEY,
+            'accept': 'application/json',
+            'authorization': 'Token ' + context.env.BUTTONDOWN_API_KEY,
             'content-type': 'application/json'
           },
           body: JSON.stringify({ email_address: data["email"] })
