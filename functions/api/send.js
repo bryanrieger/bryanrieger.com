@@ -2,9 +2,10 @@ import { Resend } from "resend";
 
 const submitForm = async (context) => {
   const resend = new Resend(context.env.RESEND_API_KEY);
-
+  
+  var input;
   try {
-    const input = await context.request.formData();
+    input = await context.request.formData();
   } catch (error) {
     return Response.redirect("https://bryanrieger.com/thank-you", 303);
   }
