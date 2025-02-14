@@ -12,21 +12,36 @@ alt: this is what's in the image
 <h2>Lorem ipsum</h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-<form id="contact" action="/api/send" method="post">
-    <fieldset>
-        <label for="name">Name</label>
-        <input id="name" type="text" name="name" autocomplete="name" placeholder="John Doe" required>
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required>
-        <label for="message">Message</label>
-        <input id="honeypot" name="spambot" type="checkbox" hidden>
-        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-    </fieldset>
-    <fieldset>
-        <button type="reset">Cancel</button>
-        <button type="submit" name="action" value="send">Send Message</button>
-    </fieldset>
-</form>
+<section id="faqs">
+
+</section>
+
+<section id="contact">
+    <h3>Lorem ipsum</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <figure>
+        
+    </figure>
+    <form action="/api/send" method="post">
+        <fieldset>
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name" autocomplete="name" placeholder="John Doe" required>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required>
+            <label for="message">Message</label>
+            <input id="honeypot" name="spambot" type="checkbox" hidden>
+            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+        </fieldset>
+        <fieldset>
+            <button type="reset">Cancel</button>
+            <button type="submit" name="action" value="send">Send <span>Message</span></button>
+        </fieldset>
+    </form>
+</section>
+
+<section id="social">
+    
+</section>
 
 <!-- Bundles -------------------------------------------------------------- -->
 
@@ -36,6 +51,7 @@ form {
 }
 fieldset {
     gap: 0.25rem;
+
 }
 fieldset:first-of-type {
     display: flex;
@@ -46,5 +62,12 @@ fieldset:last-of-type {
     flex-direction: row;
     margin-top: 1rem;
 }
-button[type=submit] { margin-left: auto; }
+button[type=submit] {
+    margin-left: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+@media (max-width: 16.5rem) {
+    button[type=submit] span { display: none; }
+}
 {%- endcss -%}

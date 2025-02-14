@@ -15,19 +15,20 @@ const submitForm = async (context) => {
   
     if (data["spambot"] != "on" && data["action"] == "subscribe") {
       if (data["email"] != "") {
-        const formData = new FormData();
-        const postURL = context.env.BUTTONDOWN_FORM_ACTION;
-        formData.append("email", data["email"]);
-
-        try {
-          const response = await fetch(postURL, {
-            method: "POST",
-            body: formData,
-          });
-        } catch (e) {
-          data["action"] = "error"
-        }
-
+        const options = {
+          method: 'POST',
+          headers: {
+            'X-Buttondown-Collision-Behavior': "overwrite",
+            accept: 'application/json',
+            authorization: 'Token ' + context.env.BUTTONDOWN_API_KEY,
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify({ email_address: data["email"] })
+        };
+        
+        fetch('https://api.buttondown.com/v1/subscribers', options)
+          .then(response => response.json())
+          .catch(err => data["action"] = "error" );
       }
     }
   
@@ -35,3 +36,5 @@ const submitForm = async (context) => {
   }
   
   export const onRequest = [submitForm];
+
+

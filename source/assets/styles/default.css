@@ -390,9 +390,11 @@ body {
 button {
   background-color: color-mix(in srgb, var(--color-background) 90%, var(--color-foreground));
   border-radius: 1rem;
+  color: var(--color-foreground);
   font-weight: 700;
   font-size: 1rem;
   padding: 0.5rem 1rem;
+  white-space: nowrap;
 }
 
 button[type=submit] {
