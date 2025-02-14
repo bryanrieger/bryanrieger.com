@@ -1,7 +1,10 @@
 const submitForm = async (context) => {
 
-  
-    let input = await context.request.formData();
+    try {
+      const input = await context.request.formData();
+    } catch (error) {
+      return Response.redirect("https://bryanrieger.com/thank-you", 303);
+    }
   
     let data = {}
     for (let [key, value] of input) {
